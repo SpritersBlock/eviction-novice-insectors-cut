@@ -319,8 +319,8 @@ public class DialogueUIManager : MonoBehaviour
         {
             GameObject newOp = Instantiate(playerChoicePrefab.gameObject, playerChoicePrefab.transform.position, Quaternion.identity) as GameObject;
             newOp.transform.SetParent(playerChoicePrefab.transform.parent, true);
-            newOp.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0 - (40 * i));
-            newOp.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            //newOp.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0 - (40 * i));
+            //newOp.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             newOp.GetComponent<TextMeshProUGUI>().text = choices[i];
             newOp.SetActive(true);
 
@@ -402,16 +402,16 @@ public class DialogueUIManager : MonoBehaviour
 
                         //If it's CrazyCap, check his stock before continuing
                         //If out of stock, change override start node
-                        if (VD.assigned.alias == "CrazyCap")
-                            if ((int)data.extraVars["item"] + 1 >= player.demo_Items.Count)
-                                VD.assigned.overrideStartNode = 28;
+                        //if (VD.assigned.alias == "CrazyCap")
+                        //    if ((int)data.extraVars["item"] + 1 >= player.demo_Items.Count)
+                        //        VD.assigned.overrideStartNode = 28;
 
 
-                        if (!player.demo_ItemInventory.Contains(player.demo_Items[(int)data.extraVars["item"]]))
-                        {
-                            GiveItem((int)data.extraVars["item"]);
-                            return true;
-                        }
+                        //if (!player.demo_ItemInventory.Contains(player.demo_Items[(int)data.extraVars["item"]]))
+                        //{
+                        //    GiveItem((int)data.extraVars["item"]);
+                        //    return true;
+                        //}
                     }
                 }
             }
@@ -489,11 +489,11 @@ public class DialogueUIManager : MonoBehaviour
     //Will also replace [WEAPON] with a different variable
     void ReplaceWord(VD.NodeData data)
     {
-        if (data.comments[data.commentIndex].Contains("[NAME]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
+        //if (data.comments[data.commentIndex].Contains("[NAME]"))
+        //    data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
 
-        if (data.comments[data.commentIndex].Contains("[WEAPON]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", player.demo_ItemInventory[0].ToLower());
+        //if (data.comments[data.commentIndex].Contains("[WEAPON]"))
+        //    data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", player.demo_ItemInventory[0].ToLower());
     }
 
     public void UpdateNameMaterial(string name)
@@ -526,14 +526,14 @@ public class DialogueUIManager : MonoBehaviour
     }
 
     //Adds item to demo inventory, shows item popup, and pauses dialogue
-    void GiveItem(int itemIndex)
-    {
-        player.demo_ItemInventory.Add(player.demo_Items[itemIndex]);
-        //itemPopUp.SetActive(true);
-        //string text = "You've got a <color=yellow>" + player.demo_Items[itemIndex] + "</color>!";
-        //itemPopUp.transform.GetChild(0).GetComponent<Text>().text = text;
-        //dialoguePaused = true;
-    }
+    //void GiveItem(int itemIndex)
+    //{
+    //    player.demo_ItemInventory.Add(player.demo_Items[itemIndex]);
+    //    //itemPopUp.SetActive(true);
+    //    //string text = "You've got a <color=yellow>" + player.demo_Items[itemIndex] + "</color>!";
+    //    //itemPopUp.transform.GetChild(0).GetComponent<Text>().text = text;
+    //    //dialoguePaused = true;
+    //}
 
     IEnumerator DrawText(string text, float time)
     {
@@ -558,7 +558,6 @@ public class DialogueUIManager : MonoBehaviour
             for (int j = 0; j < word.Length; j++)
             {
                 NPC_Text.text = previousText + word.Substring(0, j + 1);
-                //Debug.Log(word.Substring(0, j + 1));
                 if (word.Substring(0, j + 1).Contains(", "))
                 {
                     textAnimateSpeedMultiplier = commaPauseMultiplier;
@@ -585,18 +584,5 @@ public class DialogueUIManager : MonoBehaviour
         animatingText = false;
     }
 
-    //Check task progression
-    //void CheckTasks()
-    //{
-    //    if (player.demo_ItemInventory.Count == 5)
-    //        QuestChartDemo.SetQuest(2, false);
-
-    //    QuestChartDemo.CheckTaskCompletion(VD.nodeData);
-    //}
-
     #endregion
-
-    //Utility note: If you're on MonoDevelop. Go to Tools > Options > General and enable code folding.
-    //That way you can exapnd and collapse the regions and methods
-
 }

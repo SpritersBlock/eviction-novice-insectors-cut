@@ -20,8 +20,8 @@ public class PlayerVIDE : MonoBehaviour
 
     //DEMO variables for item inventory
     //Crazy cap NPC in the demo has items you can collect
-    public List<string> demo_Items = new List<string>();
-    public List<string> demo_ItemInventory = new List<string>();
+    //public List<string> demo_Items = new List<string>();
+    //public List<string> demo_ItemInventory = new List<string>();
 
     void OnTriggerEnter(Collider other)
     {
