@@ -5,30 +5,18 @@ using VIDE_Data;
 
 public class PlayerVIDE : MonoBehaviour
 {
-    //This script handles player movement and interaction with other NPC game objects
-
     public string playerName = "Garden Boy";
-
-    //Reference to our diagUI script for quick access
     public DialogueUIManager diagUI;
-    //public QuestChartDemo questUI;
-    //public Animator blue;
 
     //Stored current VA when inside a trigger
     public VIDE_Assign inTrigger;
     [SerializeField] Animator attentionBubbleAnim;
-
-    //DEMO variables for item inventory
-    //Crazy cap NPC in the demo has items you can collect
-    //public List<string> demo_Items = new List<string>();
-    //public List<string> demo_ItemInventory = new List<string>();
 
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<VIDE_Assign>() != null)
         {
             inTrigger = other.GetComponent<VIDE_Assign>();
-            //attentionBubbleActiveness(true);
         }
     }
 
@@ -37,7 +25,6 @@ public class PlayerVIDE : MonoBehaviour
         if (other.GetComponent<VIDE_Assign>() != null)
         {
             inTrigger = null;
-            //attentionBubbleActiveness(false);
         }
     }
 
@@ -56,6 +43,20 @@ public class PlayerVIDE : MonoBehaviour
 
     private void FixedUpdate()
     {
+        HandleAttentionBubbleActiveness();
+    }
+
+    void TryInteract()
+    {
+        if (inTrigger)
+        {
+            diagUI.Interact(inTrigger);
+            return;
+        }
+    }
+
+    void HandleAttentionBubbleActiveness()
+    {
         if (!VD.isActive)
         {
             if (attentionBubbleAnim.GetBool("BubbleActive") != inTrigger)
@@ -70,39 +71,5 @@ public class PlayerVIDE : MonoBehaviour
                 attentionBubbleAnim.SetBool("BubbleActive", false);
             }
         }
-    }
-
-    //Casts a ray to see if we hit an NPC and, if so, we interact
-    void TryInteract()
-    {
-        /* Prioritize triggers */
-
-        if (inTrigger)
-        {
-            diagUI.Interact(inTrigger);
-            return;
-        }
-
-        /* If we are not in a trigger, try with raycasts */
-
-        //RaycastHit rHit;
-
-        //if (Physics.Raycast(transform.position, transform.forward, out rHit, 2))
-        //{
-        //    //Lets grab the NPC's VIDE_Assign script, if there's any
-        //    VIDE_Assign assigned;
-        //    if (rHit.collider.GetComponent<VIDE_Assign>() != null)
-        //        assigned = rHit.collider.GetComponent<VIDE_Assign>();
-        //    else return;
-
-        //    if (assigned.alias == "QuestUI")
-        //    {
-        //        //questUI.Interact(); //Begins interaction with Quest Chart
-        //    }
-        //    else
-        //    {
-        //        diagUI.Interact(assigned); //Begins interaction
-        //    }
-        //}
     }
 }

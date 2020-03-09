@@ -319,8 +319,6 @@ public class DialogueUIManager : MonoBehaviour
         {
             GameObject newOp = Instantiate(playerChoicePrefab.gameObject, playerChoicePrefab.transform.position, Quaternion.identity) as GameObject;
             newOp.transform.SetParent(playerChoicePrefab.transform.parent, true);
-            //newOp.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0 - (40 * i));
-            //newOp.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             newOp.GetComponent<TextMeshProUGUI>().text = choices[i];
             newOp.SetActive(true);
 

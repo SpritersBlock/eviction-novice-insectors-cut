@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float sprintSpeed = 12;
     Vector3 movement;
     [SerializeField] Vector3 lastMove;
+    bool sprinting;
 
     [Header("Hop")]
     [SerializeField] float hopSpeed;
@@ -23,14 +24,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float groundRaycastLength;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        
+        MovementInput();
     }
 
-    // Update is called once per frame
-    void Update()
+    void MovementInput()
     {
         if (!VD.isActive)
         {
@@ -48,29 +47,37 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Sprint"))
             {
-                currentMovementSpeed = sprintSpeed;
-                SprintHop();
+                StartSprinting();
             }
             if (Input.GetButtonUp("Sprint"))
             {
-                currentMovementSpeed = walkSpeed;
+                StopSprinting();
             }
         }
         else
         {
             movement = Vector3.zero;
-            currentMovementSpeed = walkSpeed;
+            StopSprinting();
         }
     }
 
     private void FixedUpdate()
     {
+        HandleMovement();
+
+        HandleSpriteFlipping();
+    }
+
+    void HandleMovement() //For things like speed and animations
+    {
         Vector3 newPosition = rb.position + movement.normalized * currentMovementSpeed * Time.fixedDeltaTime;
         rb.MovePosition(newPosition);
-        anim.SetFloat("Speed", Mathf.Abs(movement.x) + Mathf.Abs(movement.z));
-
+        anim.SetFloat("Speed", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) + System.Convert.ToSingle(sprinting));
         anim.SetFloat("Vertical", lastMove.z);
+    }
 
+    void HandleSpriteFlipping()
+    {
         if (!VD.isActive)
         {
             if (movement.x > 0 && playerSprite.flipX) //Facing right
@@ -84,7 +91,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void SprintHop()
+    void StartSprinting()
+    {
+        sprinting = true;
+        currentMovementSpeed = sprintSpeed;
+        anim.speed = 2;
+        SprintHop();
+    }
+
+    void StopSprinting()
+    {
+        sprinting = false;
+        currentMovementSpeed = walkSpeed;
+        anim.speed = 1;
+    }
+
+    void SprintHop() //If the player is grounded, start sprinting with a short hop
     {
         RaycastHit hit;
 
