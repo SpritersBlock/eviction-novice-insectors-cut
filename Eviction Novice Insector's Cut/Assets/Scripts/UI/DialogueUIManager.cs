@@ -163,7 +163,7 @@ public class DialogueUIManager : MonoBehaviour
             //For player nodes, NodeData.commentIndex is the index of the picked choice
             if (!data.pausedAction && data.isPlayer)
             {
-                if (Input.GetAxisRaw("Vertical") < 0)
+                if (Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0)
                 {
                     if (data.commentIndex < currentChoices.Count - 1)
                     {
@@ -171,7 +171,7 @@ public class DialogueUIManager : MonoBehaviour
                         UpdateChoices(data);
                     }
                 }
-                if (Input.GetAxisRaw("Vertical") > 0)
+                if (Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0)
                 {
                     if (data.commentIndex > 0)
                     {
@@ -206,12 +206,16 @@ public class DialogueUIManager : MonoBehaviour
         {
             currentChoices[i].color = Color.white;
             currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 46;
+            if (currentChoices[i].rectTransform.localPosition.x > 0)
+            {
+                currentChoices[i].rectTransform.DOLocalMoveX(0, 0.1f);
+            }
 
             if (i == data.commentIndex)
             {
                 currentChoices[i].color = Color.yellow;
-                //currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 56;
-                currentChoices[i].GetComponent<LayoutElement>().DOPreferredSize(new Vector2(654.5f, 56), 0.1f).SetEase(Ease.OutQuart);
+                currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 56;
+                currentChoices[i].rectTransform.DOLocalMoveX(10, 0.1f);
             }
         }
     }
