@@ -48,23 +48,10 @@ public class PlayerVIDE : MonoBehaviour
 
     void Update()
     {
-
-        //Only allow player to move and turn if there are no dialogs loaded
-        //if (!VD.isActive)
-        //{
-        //    transform.Rotate(0, Input.GetAxis("Mouse X") * 5, 0);
-        //    float move = Input.GetAxisRaw("Vertical");
-        //    transform.position += transform.forward * 7 * move * Time.deltaTime;
-        //    blue.SetFloat("speed", move);
-        //}
-
-        //Interact with NPCs when pressing E
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Interact"))
         {
             TryInteract();
         }
-
-        
     }
 
     private void FixedUpdate()

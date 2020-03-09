@@ -121,6 +121,7 @@ public class DialogueUIManager : MonoBehaviour
 
         VD.BeginDialogue(dialogue); //Begins dialogue, will call the first OnNodeChange
 
+        dialogueContainer.transform.DOKill();
         dialogueContainer.transform.localPosition = new Vector3(0, 300);
         dialogueContainer.transform.DOLocalMoveY(0, .5f).SetEase(Ease.OutExpo);
 
@@ -300,6 +301,7 @@ public class DialogueUIManager : MonoBehaviour
 
     void PunchDown (GameObject photo)
     {
+        photo.transform.DOKill();
         photo.transform.DOPunchPosition(Vector3.down * 3, .2f, 10, 1);
     }
 
@@ -330,6 +332,7 @@ public class DialogueUIManager : MonoBehaviour
         VD.OnActionNode -= ActionHandler;
         VD.OnNodeChange -= UpdateUI;
         VD.OnEnd -= EndDialogue;
+        dialogueContainer.transform.DOKill();
         dialogueContainer.transform.localPosition = new Vector3(0, 0);
         dialogueContainer.transform.DOLocalMoveY(300, .3f).SetEase(Ease.InBack).OnComplete(DeactivateDialogueBox);
         VD.EndDialogue();
