@@ -1471,6 +1471,7 @@ GameObject:
   - component: {fileID: 748242122}
   - component: {fileID: 748242124}
   - component: {fileID: 748242123}
+  - component: {fileID: 748242125}
   m_Layer: 5
   m_Name: SceneTransitionHolder
   m_TagString: Untagged
@@ -1530,6 +1531,24 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &748242125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748242121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24711a220f2d284daed476123480357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maskCollection:
+  - {fileID: 3286163911610860551, guid: 7cc44e0fabed69641bf85bdcd186b010, type: 3}
+  - {fileID: 3286163911610860551, guid: 4c1c3f0c69a3c5a4b91250d596983df6, type: 3}
+  - {fileID: 3286163911610860551, guid: 1879d648b7fbd6d48ac3fd356e62d38b, type: 3}
+  mask: {fileID: 1219271465}
+  anim: {fileID: 748242123}
 --- !u!1 &756454661
 GameObject:
   m_ObjectHideFlags: 0
