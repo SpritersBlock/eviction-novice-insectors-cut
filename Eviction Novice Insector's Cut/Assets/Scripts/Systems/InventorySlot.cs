@@ -8,14 +8,18 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] Image itemIcon;
     [SerializeField] TextMeshProUGUI itemCountText;
-    int numberOfThisItem;
+    public int numberOfThisItem;
     public bool occupied;
+    public string nameOfHeldItem = null;
+    public int maxOfThisItem = 1;
 
     public void AddItemIconToSlot(Item item)
     {
         itemIcon.sprite = item.itemSprite;
         itemIcon.color = Color.white;
         AddOneToThisItemCount();
+        nameOfHeldItem = item.name;
+        maxOfThisItem = item.maxOfThisItem;
         itemCountText.gameObject.SetActive(true);
         occupied = true;
     }
@@ -41,6 +45,8 @@ public class InventorySlot : MonoBehaviour
     {
         itemIcon.color = Color.clear;
         itemIcon.sprite = null;
+        nameOfHeldItem = null;
+        maxOfThisItem = 1;
         occupied = false;
     }
 }

@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public Vector3 defaultDistance = new Vector3(0f, 2f, -10f);
     public Vector3 playerDefaultDistance;
-    public Vector3 NPCDefaultDistance;
+    public Vector3 zoomDefaultDistance;
     [SerializeField] float distanceDamp;
     [SerializeField] float rotationalDamp;
     public bool lookAt;

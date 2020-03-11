@@ -63,6 +63,8 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] float rotationMin = -3.5f;
     [SerializeField] float rotationMax = 3.5f;
 
+    [SerializeField] Inventory inventory;
+
     #endregion
 
     #region MAIN
@@ -127,7 +129,7 @@ public class DialogueUIManager : MonoBehaviour
 
         dialogueContainer.SetActive(true); //Let's make our dialogue container visible
         cameraFollow.target = dialogue.gameObject.transform;
-        cameraFollow.ChangeDefaultDistance(false, cameraFollow.NPCDefaultDistance);
+        cameraFollow.ChangeDefaultDistance(false, cameraFollow.zoomDefaultDistance);
     }
 
     //Calls next node in the dialogue
@@ -452,6 +454,15 @@ public class DialogueUIManager : MonoBehaviour
             //    }
             //}
             //UpdateNameMaterial(dialogue);
+
+            if (dialogue.alias == "Nana Silkworm")
+            {
+                if (inventory.currentlySelectedItem == "PeanutClock" && dialogue.interactionCount > 0)
+                {
+                    dialogue.overrideStartNode = 4;
+                    return false;
+                }
+            }
         }
         return false;
     }
@@ -580,6 +591,16 @@ public class DialogueUIManager : MonoBehaviour
         StopCoroutine(NPC_TextAnimator);
         NPC_Text.text = VD.nodeData.comments[VD.nodeData.commentIndex]; //Now just copy full text		
         animatingText = false;
+    }
+
+    public bool CheckForMaxOfThisItem(string itemName)
+    {
+        return inventory.CheckNumberOfThisItem(itemName);
+    }
+
+    public void RemoveItemsOfThisType(string itemName)
+    {
+        inventory.RemoveAllItemsFromThisSlot(itemName);
     }
 
     #endregion

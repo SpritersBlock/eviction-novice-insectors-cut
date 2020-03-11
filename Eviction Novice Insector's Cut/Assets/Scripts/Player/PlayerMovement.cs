@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float groundRaycastLength;
 
+    [Header("Inventory")]
+    [SerializeField] Inventory inventory;
+
     void Update()
     {
         MovementInput();
@@ -31,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementInput()
     {
-        if (!VD.isActive)
+        if (!VD.isActive && !inventory.inventoryActive)
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.z = Input.GetAxis("Vertical");
