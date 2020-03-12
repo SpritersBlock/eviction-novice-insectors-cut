@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
+using VIDE_Data;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,6 +13,15 @@ public class Inventory : MonoBehaviour
     [SerializeField] int inventorySelectionIndex;
     public bool inventoryActive;
     [SerializeField] Image selectionBorder;
+
+    [Header("Item Blurb Window")]
+    [SerializeField] GameObject itemBlurbWindow;
+    [SerializeField] TextMeshProUGUI itemNameText;
+    [SerializeField] TextMeshProUGUI itemDescriptionText;
+
+    [Header("Canvas Groups")]
+    [SerializeField] CanvasGroup inventorySlotsCanvasGroup;
+    [SerializeField] CanvasGroup itemBlurbCanvasGroup;
 
     [SerializeField] CameraFollow cameraScript;
 
@@ -32,6 +43,7 @@ public class Inventory : MonoBehaviour
             if (!inventorySlots[o].occupied)
             {
                 inventorySlots[o].AddItemIconToSlot(item);
+                inventorySlots[o].itemDescription = item.itemDescription;
                 return;
             }
         }
@@ -59,6 +71,7 @@ public class Inventory : MonoBehaviour
                 {
                     inventorySlots[i].SubtractOneFromThisItemCount();
                 }
+                inventorySlots[i].itemDescription = null;
                 return true;
             }
         }
@@ -67,11 +80,15 @@ public class Inventory : MonoBehaviour
 
     public void ActivateInventorySelection()
     {
-        //inventorySelectionIndex = 0;
+        inventorySlotsCanvasGroup.alpha = 1;
         inventoryActive = true;
         cameraScript.defaultDistance = cameraScript.zoomDefaultDistance;
         selectionBorder.gameObject.SetActive(true);
         currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
+        UpdateItemBlurb();
+        itemBlurbWindow.SetActive(true);
+        itemBlurbCanvasGroup.alpha = 0;
+        itemBlurbCanvasGroup.DOFade(1, 0.5f);
     }
 
     public string ReturnSelectedItem(float direction)
@@ -103,9 +120,26 @@ public class Inventory : MonoBehaviour
 
     public void DeactivateInventorySelection() //Deactivates selection menu and *sets item to null*.
     {
+        inventorySlotsCanvasGroup.alpha = 0.75f;
         inventoryActive = false;
         cameraScript.defaultDistance = cameraScript.playerDefaultDistance;
         selectionBorder.gameObject.SetActive(false);
+        itemBlurbCanvasGroup.DOFade(0, 0.5f).WaitForCompletion();
+        itemBlurbWindow.SetActive(false);
+    }
+
+    void UpdateItemBlurb()
+    {
+        if (!string.IsNullOrEmpty(currentlySelectedItem))
+        {
+            itemNameText.text = currentlySelectedItem;
+            itemDescriptionText.text = inventorySlots[inventorySelectionIndex].itemDescription;
+        }
+        else
+        {
+            itemNameText.text = "Nothing";
+            itemDescriptionText.text = "Wow! It's nothing!";
+        }
     }
 
     private void Update()
@@ -115,6 +149,7 @@ public class Inventory : MonoBehaviour
             if (Input.GetButtonDown("Horizontal"))
             {
                 currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
+                UpdateItemBlurb();
             }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cancel"))
             {
@@ -123,18 +158,14 @@ public class Inventory : MonoBehaviour
             }
             if (Input.GetButtonDown("Interact") || Input.GetButtonDown("Submit"))
             {
-                //if (!string.IsNullOrEmpty(currentlySelectedItem))
-                //{
-                    SelectItem();
-                //}
+                SelectItem();
             }
         }
         else if (!inventoryActive)
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) && !VD.isActive)
             {
                 ActivateInventorySelection();
-                //currentlySelectedItem = null;
             }
         }
     }

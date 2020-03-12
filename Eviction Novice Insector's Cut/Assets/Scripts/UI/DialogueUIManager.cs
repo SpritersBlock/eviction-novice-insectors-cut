@@ -344,6 +344,8 @@ public class DialogueUIManager : MonoBehaviour
         cameraFollow.target = player.gameObject.transform;
         cameraFollow.ChangeDefaultDistance(true, cameraFollow.playerDefaultDistance);
 
+        inventory.currentlySelectedItem = null;
+
         //&//VD.SaveState("VIDEDEMOScene1", true); //Saves VIDE stuff related to EVs and override start nodes
         //QuestChartDemo.SaveProgress(); //saves OUR custom game data
     }
@@ -417,51 +419,55 @@ public class DialogueUIManager : MonoBehaviour
             }
             else
             {
-                if (data.extraVars.ContainsKey("outCondition"))
-                {
-                    if (data.extraVars.ContainsKey("condInfo"))
-                    {
-                        int[] nodeIDs = VD.ToIntArray((string)data.extraVars["outCondition"]);
-                        if (VD.assigned.interactionCount < nodeIDs.Length)
-                            VD.SetNode(nodeIDs[VD.assigned.interactionCount]);
-                        else
-                            VD.SetNode(nodeIDs[nodeIDs.Length - 1]);
-                        return true;
-                    }
-                }
-
+                //if (data.extraVars.ContainsKey("outCondition"))
+                //{
+                //    if (data.extraVars.ContainsKey("condInfo"))
+                //    {
+                //        int[] nodeIDs = VD.ToIntArray((string)data.extraVars["outCondition"]);
+                //        if (VD.assigned.interactionCount < nodeIDs.Length)
+                //            VD.SetNode(nodeIDs[VD.assigned.interactionCount]);
+                //        else
+                //            VD.SetNode(nodeIDs[nodeIDs.Length - 1]);
+                //        return true;
+                //    }
+                //}
             }
             
         }
         else //Stuff we do right before the dialogue begins
         {
-            //Get the item from CrazyCap to trigger this one on Charlie
-            //if (dialogue.alias == "Charlie")
-            //{
-            //    if (player.demo_ItemInventory.Count > 0 && dialogue.overrideStartNode == -1)
-            //    {
-            //        dialogue.overrideStartNode = 16;
-            //        return false;
-            //    }
-            //}
-
-            //foreach (Character c in charArray.characterArray)
-            //{
-            //    if (c.name == dialogue.alias)
-            //    {
-            //        NPC_label.fontSharedMaterial = c.nameMaterial;
-            //        break;
-            //    }
-            //}
-            //UpdateNameMaterial(dialogue);
-
-            if (dialogue.alias == "Nana Silkworm")
+            int storedStartNode = -1;
+            if (!string.IsNullOrEmpty(inventory.currentlySelectedItem))
             {
-                if (inventory.currentlySelectedItem == "PeanutClock" && dialogue.interactionCount > 0)
+                storedStartNode = dialogue.overrideStartNode;
+                if (inventory.currentlySelectedItem == "Peanut Clock")
                 {
-                    dialogue.overrideStartNode = 4;
+                    if (dialogue.alias == "Bee")
+                    {
+                        dialogue.overrideStartNode = 6;
+                    }
+                    if (dialogue.alias == "Nana Silkworm")
+                    {
+                        dialogue.overrideStartNode = 4;
+                    }
                     return false;
                 }
+                if (inventory.currentlySelectedItem == "Cool Flower")
+                {
+                    if (dialogue.alias == "Bee")
+                    {
+                        dialogue.overrideStartNode = 7;
+                    }
+                    if (dialogue.alias == "Nana Silkworm")
+                    {
+                        dialogue.overrideStartNode = 7;
+                    }
+                    return false;
+                }
+            }
+            else
+            {
+                dialogue.overrideStartNode = storedStartNode;
             }
         }
         return false;

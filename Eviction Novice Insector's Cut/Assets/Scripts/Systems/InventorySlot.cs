@@ -12,6 +12,7 @@ public class InventorySlot : MonoBehaviour
     public bool occupied;
     public string nameOfHeldItem = null;
     public int maxOfThisItem = 1;
+    public string itemDescription;
 
     public void AddItemIconToSlot(Item item)
     {

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3944826a49c3824429097e4e6393d64f, type: 3}
-  m_Name: PeanutClock
+  m_Name: Peanut Clock
   m_EditorClassIdentifier: 
-  itemName: PeanutClock
+  itemName: Peanut Clock
   itemSprite: {fileID: 21300000, guid: eb74d138566cc2240a3a77c9de5bc8ff, type: 3}
   maxOfThisItem: 3
+  itemDescription: A strangely inspiring clock.
