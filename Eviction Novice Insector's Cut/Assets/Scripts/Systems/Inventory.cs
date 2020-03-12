@@ -23,8 +23,6 @@ public class Inventory : MonoBehaviour
     [SerializeField] CanvasGroup inventorySlotsCanvasGroup;
     [SerializeField] CanvasGroup itemBlurbCanvasGroup;
 
-    [SerializeField] CameraFollow cameraScript;
-
     public void AddItemToInventory(Item item)
     {
         //Check if the player already has one (or more) of this item.
@@ -82,7 +80,7 @@ public class Inventory : MonoBehaviour
     {
         inventorySlotsCanvasGroup.alpha = 1;
         inventoryActive = true;
-        cameraScript.defaultDistance = cameraScript.zoomDefaultDistance;
+        CameraFollow.instance.defaultDistance = CameraFollow.instance.zoomDefaultDistance;
         selectionBorder.gameObject.SetActive(true);
         currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
         UpdateItemBlurb();
@@ -122,7 +120,7 @@ public class Inventory : MonoBehaviour
     {
         inventorySlotsCanvasGroup.alpha = 0.75f;
         inventoryActive = false;
-        cameraScript.defaultDistance = cameraScript.playerDefaultDistance;
+        CameraFollow.instance.defaultDistance = CameraFollow.instance.playerDefaultDistance;
         selectionBorder.gameObject.SetActive(false);
         itemBlurbCanvasGroup.DOFade(0, 0.5f).WaitForCompletion();
         itemBlurbWindow.SetActive(false);

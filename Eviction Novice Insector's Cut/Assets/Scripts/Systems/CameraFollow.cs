@@ -14,6 +14,13 @@ public class CameraFollow : MonoBehaviour
 
     Vector3 velocity = Vector3.one;
 
+    public static CameraFollow instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         if (target)

@@ -65,6 +65,7 @@ public class DialogueUIManager : MonoBehaviour
 
     [SerializeField] Inventory inventory;
 
+    public static DialogueUIManager instance;
     #endregion
 
     #region MAIN
@@ -76,6 +77,8 @@ public class DialogueUIManager : MonoBehaviour
 
         //Loads the saved state of VIDE_Assigns and dialogues.
         //&//VD.LoadState("VIDEDEMOScene1", true);
+
+        instance = this;
     }
 
     private void Start()
