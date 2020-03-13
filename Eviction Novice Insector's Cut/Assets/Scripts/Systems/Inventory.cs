@@ -120,7 +120,10 @@ public class Inventory : MonoBehaviour
     {
         inventorySlotsCanvasGroup.alpha = 0.75f;
         inventoryActive = false;
-        CameraFollow.instance.defaultDistance = CameraFollow.instance.playerDefaultDistance;
+        if (!VD.isActive)
+        {
+            CameraFollow.instance.defaultDistance = CameraFollow.instance.playerDefaultDistance;
+        }
         selectionBorder.gameObject.SetActive(false);
         itemBlurbCanvasGroup.DOFade(0, 0.5f).WaitForCompletion();
         itemBlurbWindow.SetActive(false);
