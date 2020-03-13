@@ -12,6 +12,13 @@ public class PlayerVIDE : MonoBehaviour
     public VIDE_Assign inTrigger;
     [SerializeField] Animator attentionBubbleAnim;
 
+    public static PlayerVIDE instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<VIDE_Assign>() != null)

@@ -31,18 +31,33 @@ public class SceneTransition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            CallTransitionCoroutine("Garden-1");
+            CallTransitionCoroutine("Garden-1", -1);
         }
     }
 
-    public void CallTransitionCoroutine(string sceneToMoveTo)
+    public void CallTransitionCoroutine(string sceneToMoveTo, int specificMaskIndexToUse)
     {
-        StartCoroutine(SceneTransitionCoroutine(sceneToMoveTo));
+        StartCoroutine(SceneTransitionCoroutine(sceneToMoveTo, specificMaskIndexToUse));
     }
 
-    IEnumerator SceneTransitionCoroutine(string sceneToMoveTo)
+    IEnumerator SceneTransitionCoroutine(string sceneToMoveTo, int specificMaskIndexToUse)
     {
-        mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
+        if (specificMaskIndexToUse < 0)
+        {
+            mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
+        }
+        else
+        {
+            if (specificMaskIndexToUse < maskCollection.Length - 1)
+            {
+                mask.sprite = maskCollection[specificMaskIndexToUse];
+            }
+            else
+            {
+                Debug.LogWarning("Mask index is too high!");
+                mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
+            }
+        }
         anim.SetBool("TransitioningScenes", true);
 
         yield return new WaitForSeconds(transitionAnimClip.length);

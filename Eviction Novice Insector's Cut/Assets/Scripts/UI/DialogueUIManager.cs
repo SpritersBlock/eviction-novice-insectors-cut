@@ -39,13 +39,9 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] GameObject NPCPhotoFrame;
     [SerializeField] GameObject playerPhotoFrame;
     [SerializeField] CharacterArray charArray;
-    [SerializeField] CameraFollow cameraFollow;
 
     bool dialoguePaused = false; //Custom variable to prevent the manager from calling VD.Next
     bool animatingText = false; //Will help us know when text is currently being animated
-
-    //Reference to the player script
-    public PlayerVIDE player;
 
     //We'll be using this to store references of the current player choices
     private List<TextMeshProUGUI> currentChoices = new List<TextMeshProUGUI>();
@@ -131,8 +127,8 @@ public class DialogueUIManager : MonoBehaviour
         dialogueContainer.transform.DOLocalMoveY(0, .5f).SetEase(Ease.OutExpo);
 
         dialogueContainer.SetActive(true); //Let's make our dialogue container visible
-        cameraFollow.target = dialogue.gameObject.transform;
-        cameraFollow.ChangeDefaultDistance(false, cameraFollow.zoomDefaultDistance);
+        CameraFollow.instance.target = dialogue.gameObject.transform;
+        CameraFollow.instance.ChangeDefaultDistance(false, CameraFollow.instance.zoomDefaultDistance);
     }
 
     //Calls next node in the dialogue
@@ -259,7 +255,7 @@ public class DialogueUIManager : MonoBehaviour
             if (data.tag.Length > 0)
                 playerLabel.text = data.tag;
             else
-                playerLabel.text = player.playerName;
+                playerLabel.text = PlayerVIDE.instance.playerName;
 
             UpdateChoices(data);
 
@@ -344,8 +340,8 @@ public class DialogueUIManager : MonoBehaviour
         dialogueContainer.transform.DOLocalMoveY(300, .3f).SetEase(Ease.InBack).OnComplete(DeactivateDialogueBox);
         VD.EndDialogue();
 
-        cameraFollow.target = player.gameObject.transform;
-        cameraFollow.ChangeDefaultDistance(true, cameraFollow.playerDefaultDistance);
+        CameraFollow.instance.target = PlayerVIDE.instance.gameObject.transform;
+        CameraFollow.instance.ChangeDefaultDistance(true, CameraFollow.instance.playerDefaultDistance);
 
         inventory.currentlySelectedItem = null;
 

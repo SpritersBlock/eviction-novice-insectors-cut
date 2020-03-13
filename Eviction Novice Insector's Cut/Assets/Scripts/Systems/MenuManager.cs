@@ -6,6 +6,6 @@ public class MenuManager : MonoBehaviour
 {
     public void GoToScene(string sceneToGoTo)
     {
-        SceneTransition.instance.CallTransitionCoroutine(sceneToGoTo);
+        SceneTransition.instance.CallTransitionCoroutine(sceneToGoTo, 1);
     }
 }

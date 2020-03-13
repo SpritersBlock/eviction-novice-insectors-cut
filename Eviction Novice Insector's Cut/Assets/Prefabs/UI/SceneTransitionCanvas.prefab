@@ -116,6 +116,7 @@ MonoBehaviour:
   - {fileID: 3286163911610860551, guid: 7cc44e0fabed69641bf85bdcd186b010, type: 3}
   - {fileID: 3286163911610860551, guid: 4c1c3f0c69a3c5a4b91250d596983df6, type: 3}
   - {fileID: 3286163911610860551, guid: 1879d648b7fbd6d48ac3fd356e62d38b, type: 3}
+  - {fileID: 3286163911610860551, guid: 27c116e0bcba31840adf1216bff92d12, type: 3}
   mask: {fileID: 1874738936675378855}
   anim: {fileID: 1874738936070601029}
   transitionAnimClip: {fileID: 7400000, guid: d3cd5c5ae34706e4aaa27f0b4cadade9, type: 2}
