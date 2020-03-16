@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Cool Flower
   itemSprite: {fileID: 21300000, guid: 0d760f571eb7d0a46bd7bba89a606774, type: 3}
   maxOfThisItem: 3
-  itemDescription: Wait, this isn't a flower...
+  itemDescription: This is one cool flower.

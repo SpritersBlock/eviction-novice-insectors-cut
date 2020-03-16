@@ -10,9 +10,11 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] InventorySlot[] inventorySlots;
     public string currentlySelectedItem;
+    public int amountOfCurrentlySelectedItem;
     [SerializeField] int inventorySelectionIndex;
     public bool inventoryActive;
     [SerializeField] Image selectionBorder;
+    public static Inventory instance;
 
     [Header("Item Blurb Window")]
     [SerializeField] GameObject itemBlurbWindow;
@@ -22,6 +24,11 @@ public class Inventory : MonoBehaviour
     [Header("Canvas Groups")]
     [SerializeField] CanvasGroup inventorySlotsCanvasGroup;
     [SerializeField] CanvasGroup itemBlurbCanvasGroup;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void AddItemToInventory(Item item)
     {
@@ -81,7 +88,7 @@ public class Inventory : MonoBehaviour
     {
         inventorySlotsCanvasGroup.alpha = 1;
         inventoryActive = true;
-        CameraFollow.instance.currentZoomDistance = CameraFollow.instance.zoomDefaultDistance;
+        CameraFollow.instance.ChangeDefaultDistance(false, CameraFollow.instance.zoomDefaultDistance);
         selectionBorder.gameObject.SetActive(true);
         currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
         UpdateItemBlurb();
@@ -104,10 +111,12 @@ public class Inventory : MonoBehaviour
         selectionBorder.rectTransform.DOLocalMoveX(inventorySlots[inventorySelectionIndex].gameObject.transform.localPosition.x, 0.2f).SetEase(Ease.InOutBack);
         if (inventorySlots[inventorySelectionIndex].nameOfHeldItem != null)
         {
+            amountOfCurrentlySelectedItem = inventorySlots[inventorySelectionIndex].numberOfThisItem;
             return inventorySlots[inventorySelectionIndex].nameOfHeldItem;
         }
         else //if name is null
         {
+            amountOfCurrentlySelectedItem = 0;
             return null;
         }
     }
@@ -118,18 +127,15 @@ public class Inventory : MonoBehaviour
         return currentlySelectedItem;
     }
 
-    public void DeactivateInventorySelection() //Deactivates selection menu and *sets item to null*.
+    public void DeactivateInventorySelection() //Deactivates selection menu and sets item to null.
     {
         inventorySlotsCanvasGroup.alpha = 0.75f;
         inventoryActive = false;
-        if (!VD.isActive)
-        {
-            CameraFollow.instance.currentZoomDistance = CameraFollow.instance.playerDefaultDistance;
-        }
         selectionBorder.gameObject.SetActive(false);
         itemBlurbCanvasGroup.DOFade(0, 0.5f).WaitForCompletion();
         itemBlurbWindow.SetActive(false);
         PlayerMovement.instance.canMove = true;
+        Invoke("EmptyCurrentSelection", 0.1f);
     }
 
     void UpdateItemBlurb()
@@ -155,10 +161,10 @@ public class Inventory : MonoBehaviour
                 currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
                 UpdateItemBlurb();
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cancel"))
+            if (Input.GetButtonDown("Inventory") || Input.GetButtonDown("Cancel"))
             {
                 DeactivateInventorySelection();
-                currentlySelectedItem = null;
+                EmptyCurrentSelection();
             }
             if (Input.GetButtonDown("Submit"))
             {
@@ -167,10 +173,29 @@ public class Inventory : MonoBehaviour
         }
         else if (!inventoryActive)
         {
-            if (Input.GetKeyDown(KeyCode.P) && !VD.isActive)
+            if (Input.GetButtonDown("Inventory") && !VD.isActive)
             {
                 ActivateInventorySelection();
             }
+        }
+    }
+
+    public void FadeInventorySlots(float endOpacity)
+    {
+        inventorySlotsCanvasGroup.DOFade(endOpacity, 0.2f).SetEase(Ease.OutQuint);
+    }
+
+    void EmptyCurrentSelection()
+    {
+        currentlySelectedItem = null;
+        amountOfCurrentlySelectedItem = 0;
+        if (!VD.isActive)
+        {
+            CameraFollow.instance.ChangeDefaultDistance(true, CameraFollow.instance.playerDefaultDistance);
+        }
+        else
+        {
+            CameraFollow.instance.ChangeDefaultDistance(false, CameraFollow.instance.zoomDefaultDistance);
         }
     }
 }

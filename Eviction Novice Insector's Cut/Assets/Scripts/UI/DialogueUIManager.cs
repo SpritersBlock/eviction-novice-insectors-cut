@@ -447,7 +447,14 @@ public class DialogueUIManager : MonoBehaviour
                     }
                     if (dialogue.alias == "Nana Silkworm")
                     {
-                        dialogue.overrideStartNode = 4;
+                        if (inventory.amountOfCurrentlySelectedItem >= 2)
+                        {
+                            dialogue.overrideStartNode = 4;
+                        }
+                        else
+                        {
+                            dialogue.overrideStartNode = 8;
+                        }
                     }
                     return false;
                 }
@@ -538,16 +545,6 @@ public class DialogueUIManager : MonoBehaviour
     {
         //Debug.Log("ACTION TRIGGERED: " + actionNodeID.ToString());
     }
-
-    //Adds item to demo inventory, shows item popup, and pauses dialogue
-    //void GiveItem(int itemIndex)
-    //{
-    //    player.demo_ItemInventory.Add(player.demo_Items[itemIndex]);
-    //    //itemPopUp.SetActive(true);
-    //    //string text = "You've got a <color=yellow>" + player.demo_Items[itemIndex] + "</color>!";
-    //    //itemPopUp.transform.GetChild(0).GetComponent<Text>().text = text;
-    //    //dialoguePaused = true;
-    //}
 
     IEnumerator DrawText(string text, float time)
     {

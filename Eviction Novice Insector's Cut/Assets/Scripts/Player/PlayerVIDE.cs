@@ -54,6 +54,13 @@ public class PlayerVIDE : MonoBehaviour
         {
             TryInteract();
         }
+        if (VD.isActive)
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                TryInteract();
+            }
+        }
     }
 
     private void FixedUpdate()
