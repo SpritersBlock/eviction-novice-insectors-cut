@@ -27,6 +27,14 @@ public class PlayerVIDE : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<VIDE_Assign>() != null)
+        {
+            inTrigger = other.GetComponent<VIDE_Assign>();
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<VIDE_Assign>() != null)

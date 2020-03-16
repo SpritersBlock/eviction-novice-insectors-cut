@@ -4553,6 +4553,7 @@ GameObject:
   - component: {fileID: 1673665195}
   - component: {fileID: 1673665197}
   - component: {fileID: 1673665196}
+  - component: {fileID: 1673665198}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -4618,6 +4619,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673665194}
   m_CullTransparentMesh: 0
+--- !u!225 &1673665198
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673665194}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1686439323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,7 +4825,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827261976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -4861,7 +4874,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -5491,7 +5504,7 @@ PrefabInstance:
         type: 3}
       propertyPath: youGotObject
       value: 
-      objectReference: {fileID: 1673665194}
+      objectReference: {fileID: 1673665198}
     - target: {fileID: 1554014691780208006, guid: d852f63e3413dc544abf85714a39923b,
         type: 3}
       propertyPath: itemNameText
