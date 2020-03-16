@@ -42,7 +42,7 @@ public class PlayerVIDE : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact") || Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
             TryInteract();
         }

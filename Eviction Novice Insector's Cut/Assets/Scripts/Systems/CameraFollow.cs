@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    public Vector3 defaultDistance = new Vector3(0f, 2f, -10f);
+    public Vector3 currentZoomDistance = new Vector3(0f, 2f, -10f);
     public Vector3 playerDefaultDistance;
     public Vector3 zoomDefaultDistance;
+    public Vector3 itemZoomDistance;
     [SerializeField] float distanceDamp;
     [SerializeField] float rotationalDamp;
     public bool lookAt;
@@ -25,10 +26,10 @@ public class CameraFollow : MonoBehaviour
     {
         if (target)
         {
-            transform.position = target.position + defaultDistance;
+            transform.position = target.position + currentZoomDistance;
         }
 
-        playerDefaultDistance = defaultDistance;
+        playerDefaultDistance = currentZoomDistance;
     }
 
     private void FixedUpdate()
@@ -38,7 +39,7 @@ public class CameraFollow : MonoBehaviour
 
     void SmoothFollow()
     {
-        Vector3 toPos = target.position + (target.rotation * defaultDistance);
+        Vector3 toPos = target.position + (target.rotation * currentZoomDistance);
         Vector3 curPos = Vector3.SmoothDamp(transform.position, toPos, ref velocity, distanceDamp);
         transform.position = curPos;
 
@@ -52,11 +53,11 @@ public class CameraFollow : MonoBehaviour
     {
         if (backToPlayer)
         {
-            defaultDistance = playerDefaultDistance;
+            currentZoomDistance = playerDefaultDistance;
         }
         else
         {
-            defaultDistance = newDistance;
+            currentZoomDistance = newDistance;
         }
     }
 }

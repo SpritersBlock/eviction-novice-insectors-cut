@@ -42,6 +42,7 @@ public class Inventory : MonoBehaviour
             {
                 inventorySlots[o].AddItemIconToSlot(item);
                 inventorySlots[o].itemDescription = item.itemDescription;
+                PlayerItemCollect.instance.ItemCollect(item);
                 return;
             }
         }
@@ -80,13 +81,14 @@ public class Inventory : MonoBehaviour
     {
         inventorySlotsCanvasGroup.alpha = 1;
         inventoryActive = true;
-        CameraFollow.instance.defaultDistance = CameraFollow.instance.zoomDefaultDistance;
+        CameraFollow.instance.currentZoomDistance = CameraFollow.instance.zoomDefaultDistance;
         selectionBorder.gameObject.SetActive(true);
         currentlySelectedItem = ReturnSelectedItem(Input.GetAxisRaw("Horizontal"));
         UpdateItemBlurb();
         itemBlurbWindow.SetActive(true);
         itemBlurbCanvasGroup.alpha = 0;
         itemBlurbCanvasGroup.DOFade(1, 0.5f);
+        PlayerMovement.instance.canMove = false;
     }
 
     public string ReturnSelectedItem(float direction)
@@ -122,11 +124,12 @@ public class Inventory : MonoBehaviour
         inventoryActive = false;
         if (!VD.isActive)
         {
-            CameraFollow.instance.defaultDistance = CameraFollow.instance.playerDefaultDistance;
+            CameraFollow.instance.currentZoomDistance = CameraFollow.instance.playerDefaultDistance;
         }
         selectionBorder.gameObject.SetActive(false);
         itemBlurbCanvasGroup.DOFade(0, 0.5f).WaitForCompletion();
         itemBlurbWindow.SetActive(false);
+        PlayerMovement.instance.canMove = true;
     }
 
     void UpdateItemBlurb()
@@ -157,7 +160,7 @@ public class Inventory : MonoBehaviour
                 DeactivateInventorySelection();
                 currentlySelectedItem = null;
             }
-            if (Input.GetButtonDown("Interact") || Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Submit"))
             {
                 SelectItem();
             }

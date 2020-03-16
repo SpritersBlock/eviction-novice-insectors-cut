@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer playerSprite;
+    public static PlayerMovement instance;
 
     [Header("Movement")]
     [SerializeField] float currentMovementSpeed = 6;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     [SerializeField] Vector3 lastMove;
     bool sprinting;
+    public bool canMove = true;
 
     [Header("Hop")]
     [SerializeField] float hopSpeed;
@@ -27,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Inventory")]
     [SerializeField] Inventory inventory;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Update()
     {
         MovementInput();
@@ -34,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementInput()
     {
-        if (!VD.isActive && !inventory.inventoryActive)
+        if (!VD.isActive && canMove)
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.z = Input.GetAxis("Vertical");
