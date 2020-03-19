@@ -11,7 +11,6 @@ public class InventorySlot : MonoBehaviour
     public int numberOfThisItem;
     public bool occupied;
     public string nameOfHeldItem = null;
-    public int maxOfThisItem = 1;
     public string itemDescription;
 
     public void AddItemIconToSlot(Item item)
@@ -20,7 +19,6 @@ public class InventorySlot : MonoBehaviour
         itemIcon.color = Color.white;
         AddOneToThisItemCount();
         nameOfHeldItem = item.name;
-        maxOfThisItem = item.maxOfThisItem;
         itemCountText.gameObject.SetActive(true);
         occupied = true;
     }
@@ -47,7 +45,6 @@ public class InventorySlot : MonoBehaviour
         itemIcon.color = Color.clear;
         itemIcon.sprite = null;
         nameOfHeldItem = null;
-        maxOfThisItem = 1;
         occupied = false;
     }
 }

@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            if (inventorySlots[i].nameOfHeldItem == itemName && inventorySlots[i].numberOfThisItem >= inventorySlots[i].maxOfThisItem)
+            if (inventorySlots[i].nameOfHeldItem == itemName)
             {
                 return true;
             }
