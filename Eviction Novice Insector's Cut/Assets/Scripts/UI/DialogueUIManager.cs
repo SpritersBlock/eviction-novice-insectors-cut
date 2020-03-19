@@ -329,7 +329,7 @@ public class DialogueUIManager : MonoBehaviour
 
     //Unsuscribe from everything, disable UI, and end dialogue
     //Called automatically because we subscribed to the OnEnd event
-    void EndDialogue(VD.NodeData data)
+    public void EndDialogue(VD.NodeData data)
     {
         //CheckTasks();
         VD.OnActionNode -= ActionHandler;

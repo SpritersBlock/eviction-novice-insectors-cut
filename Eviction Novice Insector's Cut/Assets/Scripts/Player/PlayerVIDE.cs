@@ -58,7 +58,7 @@ public class PlayerVIDE : MonoBehaviour
         {
             if (Input.GetButtonDown("Cancel"))
             {
-                TryInteract();
+                diagUI.EndDialogue(VD.nodeData);
             }
         }
     }
