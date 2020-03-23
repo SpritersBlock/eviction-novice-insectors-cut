@@ -15,17 +15,22 @@ public class SceneTransition : MonoBehaviour
 
     private void Awake()
     {
-        //if (instance == null)
-        //{
+        if (instance == null)
+        {
             instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        SetMask(-1);
     }
 
     private void Update()
@@ -48,22 +53,7 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator SceneTransitionCoroutine(string sceneToMoveTo, int specificMaskIndexToUse)
     {
-        if (specificMaskIndexToUse < 0)
-        {
-            mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
-        }
-        else
-        {
-            if (specificMaskIndexToUse < maskCollection.Length - 1)
-            {
-                mask.sprite = maskCollection[specificMaskIndexToUse];
-            }
-            else
-            {
-                Debug.LogWarning("Mask index is too high!");
-                mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
-            }
-        }
+        SetMask(specificMaskIndexToUse);
 
         //Doesn't work - I think it's being called before the dialogue system reactivates canMove.
         //if (PlayerMovement.instance)
@@ -85,5 +75,25 @@ public class SceneTransition : MonoBehaviour
         }
         transitioning = false;
         yield return null;
+    }
+
+    void SetMask(int specificMaskIndexToUse)
+    {
+        if (specificMaskIndexToUse < 0)
+        {
+            mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
+        }
+        else
+        {
+            if (specificMaskIndexToUse < maskCollection.Length - 1)
+            {
+                mask.sprite = maskCollection[specificMaskIndexToUse];
+            }
+            else
+            {
+                Debug.LogWarning("Mask index is too high!");
+                mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
+            }
+        }
     }
 }
