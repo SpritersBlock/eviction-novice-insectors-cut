@@ -2813,20 +2813,12 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 1
-  - commentCount: 2
+  - commentCount: 1
     s_comment:
-    - text: You think you're ready for the other side? Huh? You sure?
+    - text: Where would you even want to GO though?
       extraData: ExtraData
       inputSetIndex: 2
-      outputNodeIndex: -1
-      outActionIndex: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Suit yourself.
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: -1
+      outputNodeIndex: 7
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -2901,6 +2893,30 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: '> Garden-1!'
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: '> Title screen!'
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: 1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: SceneTransitionCanvas
@@ -2912,6 +2928,20 @@ MonoBehaviour:
     param_int: 0
     param_float: 0
     ID: 5
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: SceneTransitionCanvas
+    methodName: CallTransitionCoroutineRandomMask
+    paramType: 2
+    gotoNode: -1
+    param_bool: 0
+    param_string: Title Screen
+    param_int: 0
+    param_float: 0
+    ID: 9
     outPlayerIndex: -1
     outActionIndex: -1
     ovrStartNode: -1
