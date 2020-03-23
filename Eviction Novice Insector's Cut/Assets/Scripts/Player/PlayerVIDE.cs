@@ -6,7 +6,6 @@ using VIDE_Data;
 public class PlayerVIDE : MonoBehaviour
 {
     public string playerName = "Garden Boy";
-    public DialogueUIManager diagUI;
 
     //Stored current VA when inside a trigger
     public VIDE_Assign inTrigger;
@@ -58,7 +57,7 @@ public class PlayerVIDE : MonoBehaviour
         {
             if (Input.GetButtonDown("Cancel"))
             {
-                diagUI.EndDialogue(VD.nodeData);
+                DialogueUIManager.instance.EndDialogue(VD.nodeData);
             }
         }
     }
@@ -70,9 +69,9 @@ public class PlayerVIDE : MonoBehaviour
 
     void TryInteract()
     {
-        if (inTrigger)
+        if (inTrigger && !SceneTransition.instance.transitioning)
         {
-            diagUI.Interact(inTrigger);
+            DialogueUIManager.instance.Interact(inTrigger);
             return;
         }
     }

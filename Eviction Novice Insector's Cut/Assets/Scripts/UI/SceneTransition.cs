@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] SVGImage mask;
     [SerializeField] Animator anim;
     [SerializeField] AnimationClip transitionAnimClip;
+    public bool transitioning;
 
     public static SceneTransition instance;
 
@@ -31,11 +32,16 @@ public class SceneTransition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            CallTransitionCoroutine("Garden-1", -1);
+            CallTransitionCoroutineWithSpecificMask("Garden-1", -1);
         }
     }
 
-    public void CallTransitionCoroutine(string sceneToMoveTo, int specificMaskIndexToUse)
+    public void CallTransitionCoroutineRandomMask(string sceneToMoveTo)
+    {
+        StartCoroutine(SceneTransitionCoroutine(sceneToMoveTo, -1));
+    }
+
+    public void CallTransitionCoroutineWithSpecificMask(string sceneToMoveTo, int specificMaskIndexToUse)
     {
         StartCoroutine(SceneTransitionCoroutine(sceneToMoveTo, specificMaskIndexToUse));
     }
@@ -58,6 +64,14 @@ public class SceneTransition : MonoBehaviour
                 mask.sprite = maskCollection[Random.Range(0, maskCollection.Length)];
             }
         }
+
+        //Doesn't work - I think it's being called before the dialogue system reactivates canMove.
+        //if (PlayerMovement.instance)
+        //{
+        //    PlayerMovement.instance.canMove = false;
+        //}
+        transitioning = true;
+
         anim.SetBool("TransitioningScenes", true);
 
         yield return new WaitForSeconds(transitionAnimClip.length);
@@ -65,6 +79,11 @@ public class SceneTransition : MonoBehaviour
 
         anim.SetBool("TransitioningScenes", false);
 
+        if (PlayerMovement.instance)
+        {
+            PlayerMovement.instance.canMove = false;
+        }
+        transitioning = false;
         yield return null;
     }
 }

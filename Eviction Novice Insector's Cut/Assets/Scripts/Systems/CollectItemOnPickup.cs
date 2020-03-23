@@ -5,13 +5,12 @@ using UnityEngine;
 public class CollectItemOnPickup : MonoBehaviour
 {
     [SerializeField] Item item;
-    [SerializeField] Inventory inventory;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            inventory.AddItemToInventory(item);
+            Inventory.instance.AddItemToInventory(item);
             Destroy(gameObject);
         }
     }

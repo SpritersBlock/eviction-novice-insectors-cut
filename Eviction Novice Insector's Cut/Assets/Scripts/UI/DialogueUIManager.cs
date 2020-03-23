@@ -59,8 +59,6 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] float rotationMin = -3.5f;
     [SerializeField] float rotationMax = 3.5f;
 
-    [SerializeField] Inventory inventory;
-
     public static DialogueUIManager instance;
     #endregion
 
@@ -343,7 +341,7 @@ public class DialogueUIManager : MonoBehaviour
         CameraFollow.instance.target = PlayerVIDE.instance.gameObject.transform;
         CameraFollow.instance.ChangeDefaultDistance(true, CameraFollow.instance.playerDefaultDistance);
 
-        inventory.currentlySelectedItem = null;
+        Inventory.instance.currentlySelectedItem = null;
 
         //&//VD.SaveState("VIDEDEMOScene1", true); //Saves VIDE stuff related to EVs and override start nodes
         //QuestChartDemo.SaveProgress(); //saves OUR custom game data
@@ -436,10 +434,10 @@ public class DialogueUIManager : MonoBehaviour
         else //Stuff we do right before the dialogue begins
         {
             int storedStartNode = -1;
-            if (!string.IsNullOrEmpty(inventory.currentlySelectedItem))
+            if (!string.IsNullOrEmpty(Inventory.instance.currentlySelectedItem))
             {
                 storedStartNode = dialogue.overrideStartNode;
-                if (inventory.currentlySelectedItem == "Peanut Clock")
+                if (Inventory.instance.currentlySelectedItem == "Peanut Clock")
                 {
                     if (dialogue.alias == "Bee")
                     {
@@ -447,7 +445,7 @@ public class DialogueUIManager : MonoBehaviour
                     }
                     if (dialogue.alias == "Nana Silkworm")
                     {
-                        if (inventory.amountOfCurrentlySelectedItem >= 2)
+                        if (Inventory.instance.amountOfCurrentlySelectedItem >= 2)
                         {
                             dialogue.overrideStartNode = 4;
                         }
@@ -458,7 +456,7 @@ public class DialogueUIManager : MonoBehaviour
                     }
                     return false;
                 }
-                if (inventory.currentlySelectedItem == "Cool Flower")
+                if (Inventory.instance.currentlySelectedItem == "Cool Flower")
                 {
                     if (dialogue.alias == "Bee")
                     {
@@ -597,12 +595,12 @@ public class DialogueUIManager : MonoBehaviour
 
     public bool CheckForMaxOfThisItem(string itemName)
     {
-        return inventory.CheckNumberOfThisItem(itemName);
+        return Inventory.instance.CheckNumberOfThisItem(itemName);
     }
 
     public void RemoveItemsOfThisType(string itemName)
     {
-        inventory.RemoveAllItemsFromThisSlot(itemName);
+        Inventory.instance.RemoveAllItemsFromThisSlot(itemName);
     }
 
     #endregion

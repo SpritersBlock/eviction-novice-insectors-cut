@@ -26,9 +26,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float groundRaycastLength;
 
-    [Header("Inventory")]
-    [SerializeField] Inventory inventory;
-
     private void Awake()
     {
         instance = this;
@@ -41,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementInput()
     {
-        if (!VD.isActive && canMove)
+        if (!VD.isActive && canMove && !SceneTransition.instance.transitioning)
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.z = Input.GetAxis("Vertical");

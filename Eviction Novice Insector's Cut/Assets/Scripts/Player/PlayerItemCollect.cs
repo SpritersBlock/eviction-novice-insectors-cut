@@ -7,8 +7,6 @@ using DG.Tweening;
 public class PlayerItemCollect : MonoBehaviour
 {
     public static PlayerItemCollect instance;
-    [SerializeField] SpriteRenderer itemBackground;
-    [SerializeField] SpriteRenderer itemSprite;
 
     [SerializeField] CanvasGroup youGotObject;
     [SerializeField] TextMeshProUGUI itemNameText;
@@ -24,20 +22,20 @@ public class PlayerItemCollect : MonoBehaviour
         PlayerMovement.instance.canMove = false;
         CameraFollow.instance.currentZoomDistance = CameraFollow.instance.itemZoomDistance;
 
-        itemSprite.sprite = item.itemSprite;
+        PlayerItemNull.instance.itemSprite.sprite = item.itemSprite;
         itemNameText.text = item.itemName;
         itemDescriptionText.text = item.itemDescription;
 
-        itemSprite.gameObject.SetActive(true);
-        itemBackground.gameObject.SetActive(true);
+        PlayerItemNull.instance.itemSprite.gameObject.SetActive(true);
+        PlayerItemNull.instance.itemBackground.gameObject.SetActive(true);
 
-        itemSprite.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        itemSprite.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 0.7f).SetEase(Ease.OutElastic);
+        PlayerItemNull.instance.itemSprite.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        PlayerItemNull.instance.itemSprite.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 0.7f).SetEase(Ease.OutElastic);
 
-        itemBackground.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        itemBackground.transform.localEulerAngles = new Vector3(0, 0, 180);
-        itemBackground.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.7f).SetEase(Ease.OutElastic);
-        itemBackground.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f).SetEase(Ease.OutElastic);
+        PlayerItemNull.instance.itemBackground.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        PlayerItemNull.instance.itemBackground.transform.localEulerAngles = new Vector3(0, 0, 180);
+        PlayerItemNull.instance.itemBackground.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.7f).SetEase(Ease.OutElastic);
+        PlayerItemNull.instance.itemBackground.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f).SetEase(Ease.OutElastic);
 
         youGotObject.alpha = 0;
         youGotObject.gameObject.SetActive(true);
@@ -60,8 +58,8 @@ public class PlayerItemCollect : MonoBehaviour
     void ResumeGameplay()
     {
         PlayerMovement.instance.canMove = true;
-        itemSprite.gameObject.SetActive(false);
-        itemBackground.gameObject.SetActive(false);
+        PlayerItemNull.instance.itemSprite.gameObject.SetActive(false);
+        PlayerItemNull.instance.itemBackground.gameObject.SetActive(false);
         youGotObject.gameObject.SetActive(false);
         CameraFollow.instance.currentZoomDistance = CameraFollow.instance.playerDefaultDistance;
         Inventory.instance.FadeInventorySlots(0.75f);

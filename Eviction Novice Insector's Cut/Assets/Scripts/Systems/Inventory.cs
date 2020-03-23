@@ -27,7 +27,10 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     public void AddItemToInventory(Item item)
