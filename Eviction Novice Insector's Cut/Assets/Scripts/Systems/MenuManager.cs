@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
 
     public void GoToScene(string sceneToGoTo)
     {
-        SceneTransition.instance.CallTransitionCoroutineWithSpecificMask(sceneToGoTo, 1);
+        SceneTransition.instance.CallTransitionCoroutineWithSpecificMask(sceneToGoTo, -1);
     }
 
     public void ActivateMenu(int activeMenuIndex)
@@ -30,5 +30,10 @@ public class MenuManager : MonoBehaviour
     public void SetSelectedObject(GameObject newSelection)
     {
         EventSystem.current.SetSelectedGameObject(newSelection);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
