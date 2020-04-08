@@ -11,6 +11,7 @@ public class SnailManager : MonoBehaviour
     {
         movingClone.SetActive(true);
         talkingClone.SetActive(false);
+        NumberOfBugsLeft.instance.RemoveOneBug();
         PlayerVIDE.instance.inTrigger = null;
     }
 }

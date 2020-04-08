@@ -30,6 +30,7 @@ public class NPC : MonoBehaviour
     public void MakeBugDisappear()
     {
         Instantiate(dustPoof, transform.position, Quaternion.identity);
+        NumberOfBugsLeft.instance.RemoveOneBug();
         Destroy(gameObject);
     }
 }
