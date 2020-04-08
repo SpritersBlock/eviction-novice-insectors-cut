@@ -3262,7 +3262,6 @@ GameObject:
   - component: {fileID: 2474968888077276314}
   - component: {fileID: 706769848541951824}
   - component: {fileID: 3744096596916269846}
-  - component: {fileID: 570295521200314607}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -3335,20 +3334,6 @@ MonoBehaviour:
   bugFactText: {fileID: 5031829598926163736}
   numberOfBugsLeftSlider: {fileID: 2322207505612061285}
   numberOfBugsLeftText: {fileID: 3608086466450861646}
---- !u!114 &570295521200314607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5501666562492950111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ead214bdb67a8748a41be793945cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfBugsTotal: 3
-  numberOfBugsLeft: 1
 --- !u!1 &6099422578284092109
 GameObject:
   m_ObjectHideFlags: 0
