@@ -14,6 +14,7 @@ public class PauseMenuManager : MonoBehaviour
 
     [Header("Buttons On Left")]
     [SerializeField] Button[] leftButtons;
+    Button lastSelectedLeftButton;
 
     [Header("Map")]
     [SerializeField] Button mapButton;
@@ -114,5 +115,14 @@ public class PauseMenuManager : MonoBehaviour
         numberOfBugsLeftSlider.value = NumberOfBugsLeft.instance.numberOfBugsTotal - NumberOfBugsLeft.instance.numberOfBugsLeft;
 
         numberOfBugsLeftText.text = NumberOfBugsLeft.instance.numberOfBugsLeft + "/" + NumberOfBugsLeft.instance.numberOfBugsTotal + "\n<size=-6>Bugs Left</size>";
+    }
+
+    public void SetLastSelectedLeftButton(Button lastSelectedButton)
+    {
+        Navigation newNavi = new Navigation();
+        newNavi.mode = Navigation.Mode.Explicit;
+        lastSelectedLeftButton = lastSelectedButton;
+        newNavi.selectOnLeft = lastSelectedLeftButton;
+        mapButton.navigation = newNavi;
     }
 }

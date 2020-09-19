@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using System.Threading;
 
 public class SnailMovement : MonoBehaviour
 {
@@ -11,6 +12,29 @@ public class SnailMovement : MonoBehaviour
 
     [SerializeField] Rigidbody rb;
     [SerializeField] float snailSpeed;
+
+    [SerializeField] ParticleSystem dustCloud;
+    [SerializeField] Animator anim;
+
+    private void Start()
+    {
+        StartCoroutine(DejaVu());
+    }
+
+    IEnumerator DejaVu()
+    {
+        yield return new WaitForSeconds(3.6f);
+        CameraFollow.instance.target = transform;
+        CameraFollow.instance.ChangeDefaultDistance(false, CameraFollow.instance.zoomDefaultDistance);
+        yield return new WaitForSeconds(0.9f);
+        CameraFollow.instance.target = GameObject.Find("Player").transform;
+        CameraFollow.instance.ChangeDefaultDistance(true, CameraFollow.instance.playerDefaultDistance);
+        yield return new WaitForSeconds(0.05f);
+        dustCloud.Play();
+        anim.SetTrigger("SnailjaVu");
+        snailSpeed = 10;
+        yield return null;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
