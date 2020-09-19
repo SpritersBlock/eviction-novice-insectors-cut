@@ -13,6 +13,7 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] GameObject pausePanel;
     public bool paused;
     public static PauseMenuManager instance;
+    [SerializeField] GameObject optionsPanel;
 
     [Header("Buttons On Left")]
     [SerializeField] Button[] leftButtons;
@@ -147,5 +148,11 @@ public class PauseMenuManager : MonoBehaviour
         lastSelectedLeftButton = lastSelectedButton;
         newNavi.selectOnLeft = lastSelectedLeftButton;
         mapButton.navigation = newNavi;
+    }
+
+    public void OptionsPanelActiveness(bool activeness)
+    {
+        optionsPanel.SetActive(activeness);
+        pausePanel.SetActive(!activeness);
     }
 }

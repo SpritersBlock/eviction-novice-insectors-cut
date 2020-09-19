@@ -3325,6 +3325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2672255536034998558}
   paused: 0
+  optionsPanel: {fileID: 3759312608522785723}
   leftButtons:
   - {fileID: 3646611308204423219}
   - {fileID: 4772091425534287440}
@@ -3464,7 +3465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8221549008430430461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3744096596916269846}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: OptionsPanelActiveness
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &4087476045757925161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5814,6 +5827,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2474968888077276314}
     m_Modifications:
+    - target: {fileID: 8128965657317227798, guid: afa8f4b24c72e204698ff11d07a44cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128965657317227798, guid: afa8f4b24c72e204698ff11d07a44cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3744096596916269846}
+    - target: {fileID: 8128965657317227798, guid: afa8f4b24c72e204698ff11d07a44cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OptionsPanelActiveness
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128965657317227798, guid: afa8f4b24c72e204698ff11d07a44cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128965657317227798, guid: afa8f4b24c72e204698ff11d07a44cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8128965658043264423, guid: afa8f4b24c72e204698ff11d07a44cf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5926,6 +5964,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa8f4b24c72e204698ff11d07a44cf5, type: 3}
+--- !u!1 &3759312608522785723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8128965658043264424, guid: afa8f4b24c72e204698ff11d07a44cf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4964129884518579731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3759312608522785716 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8128965658043264423, guid: afa8f4b24c72e204698ff11d07a44cf5,
