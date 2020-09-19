@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using System.Diagnostics;
+using DG.Tweening;
 
 public class PauseMenuManager : MonoBehaviour
 {
     [Header("Components And Stuff")]
     [SerializeField] GameObject pausePanel;
-    bool paused;
+    [SerializeField] bool paused;
     public static PauseMenuManager instance;
 
     [Header("Buttons On Left")]
@@ -48,6 +50,10 @@ public class PauseMenuManager : MonoBehaviour
             {
                 Pause();
             }
+            else if (paused)// && !currentlyInMapSelection)
+            {
+                Unpause();            
+            }
         }
         if (Input.GetButtonDown("Cancel"))
         {
@@ -57,7 +63,6 @@ public class PauseMenuManager : MonoBehaviour
             }
             else
             {
-                //exit map screen
                 Unpause();
             }
         }
@@ -65,22 +70,39 @@ public class PauseMenuManager : MonoBehaviour
 
     void Pause()
     {
+        paused = true;
         pausePanel.SetActive(true);
         RandomBugFact();
         UpdateNumberOfBugsLeft();
         PlayerMovement.instance.canMove = false;
+        leftButtons[0].Select();
+        leftButtons[0].OnSelect(null);
+
+        pausePanel.transform.DOKill();
+        pausePanel.transform.localPosition = new Vector3(0, 300);
+        pausePanel.transform.DOLocalMoveY(0, .5f).SetEase(Ease.OutExpo);
     }
 
     public void Unpause()
     {
-        pausePanel.SetActive(false);
         PlayerMovement.instance.canMove = true;
+        paused = false;
+
+        pausePanel.transform.DOKill();
+        pausePanel.transform.localPosition = new Vector3(0, 0);
+        pausePanel.transform.DOLocalMoveY(300, .3f).SetEase(Ease.InBack).OnComplete(DeactivatePausePanel);
+    }
+
+    void DeactivatePausePanel()
+    {
+        pausePanel.SetActive(false);
     }
 
     public void EnterMapSelection() //The map button is already disabled so no need to do that here
     {
         //EVENTUALLY SET AUTOMATIC BUTTON SELECTION TO AREA YOU'RE IN BUT UNTIL THEN
-        EventSystem.current.SetSelectedGameObject(waypointButtons[0].gameObject);
+        waypointButtons[0].Select();
+        waypointButtons[0].OnSelect(null);
 
         for (int i = 0; i < waypointButtons.Length; i++)
         {
@@ -98,7 +120,8 @@ public class PauseMenuManager : MonoBehaviour
         }
         currentlyInMapSelection = false;
 
-        EventSystem.current.SetSelectedGameObject(mapButton.gameObject);
+        mapButton.Select();
+        mapButton.OnSelect(null);
     }
 
     void RandomBugFact()
