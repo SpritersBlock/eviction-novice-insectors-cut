@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class InventorySlot : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class InventorySlot : MonoBehaviour
     public bool occupied;
     public string nameOfHeldItem = null;
     public string itemDescription;
+    [SerializeField] Animator anim;
 
     public void AddItemIconToSlot(Item item)
     {
@@ -27,6 +29,10 @@ public class InventorySlot : MonoBehaviour
     {
         numberOfThisItem++;
         itemCountText.text = numberOfThisItem.ToString();
+        itemCountText.transform.DOKill();
+        //itemCountText.transform.position =
+        itemCountText.transform.DOPunchPosition(Vector3.down * 3, .2f, 10, 1);
+        anim.SetTrigger("IconUpdate");
     }
 
     public void SubtractOneFromThisItemCount()

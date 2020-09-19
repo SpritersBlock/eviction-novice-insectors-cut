@@ -2218,7 +2218,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 0
+  notuptodate: 1
   startp: 0
   loadtag: 
   langs: []
@@ -3591,6 +3591,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5269229270326069275, guid: c4a1d2e9216d7f24ea1494ccc717ea69,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5269229270326069278, guid: c4a1d2e9216d7f24ea1494ccc717ea69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3907,7 +3912,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 2
     s_comment:
-    - text: '> Garden-1!'
+    - text: '> Garden-2!'
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: -1
