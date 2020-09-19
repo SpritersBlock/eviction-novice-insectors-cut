@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementInput()
     {
-        if (!VD.isActive && canMove && !SceneTransition.instance.transitioning)
+        if (!VD.isActive && canMove && !SceneTransition.instance.transitioning && !PauseMenuManager.instance.paused)
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.z = Input.GetAxis("Vertical");
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleSpriteFlipping()
     {
-        if (!VD.isActive)
+        if (!VD.isActive && !PauseMenuManager.instance.paused)
         {
             if (movement.x > 0 && playerSprite.flipX) //Facing right
             {

@@ -11,7 +11,7 @@ public class PauseMenuManager : MonoBehaviour
 {
     [Header("Components And Stuff")]
     [SerializeField] GameObject pausePanel;
-    [SerializeField] bool paused;
+    public bool paused;
     public static PauseMenuManager instance;
 
     [Header("Buttons On Left")]
