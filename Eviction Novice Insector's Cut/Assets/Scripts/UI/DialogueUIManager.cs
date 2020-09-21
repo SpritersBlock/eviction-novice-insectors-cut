@@ -204,20 +204,22 @@ public class DialogueUIManager : MonoBehaviour
         for (int i = 0; i < currentChoices.Count; i++)
         {
             currentChoices[i].color = Color.white;
-            currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 46;
+            //currentChoices[i].rectTransform.localPosition = new Vector3(0, 0, 0);
+
+            //currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 46;
 
             if (currentChoices[i].rectTransform.localPosition.x > 0)
             {
                 //currentChoices[i].rectTransform.DOLocalMoveX(0, 0.1f);
-                currentChoices[i].rectTransform.localPosition = new Vector3(0,0,0);
+                //currentChoices[i].rectTransform.localPosition = new Vector3(0,0,0);
             }
 
             if (i == data.commentIndex)
             {
                 currentChoices[i].color = Color.yellow;
-                currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 56;
+                //currentChoices[i].GetComponent<LayoutElement>().preferredHeight = 56;
                 //currentChoices[i].rectTransform.DOLocalMoveX(5, 0.1f);
-                currentChoices[i].rectTransform.localPosition = new Vector3(5, 0, 0);
+                //currentChoices[i].rectTransform.localPosition = new Vector3(5, 0, 0);
             }
         }
         //Debug.Log(currentChoices[0].text + " " + currentChoices[0].rectTransform.localPosition.x);
