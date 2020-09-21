@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(ConditionallyActive))]
 public class NPC : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] bool canFlip = true;
     [SerializeField] ParticleSystem dustPoof;
+
+    [SerializeField] Vector2 progressNumber;
 
     private void OnTriggerStay(Collider other)
     {
@@ -29,6 +33,8 @@ public class NPC : MonoBehaviour
 
     public void MakeBugDisappear()
     {
+        GlobalProgressChecker.instance.UpdateConditionallyActiveBool(Mathf.RoundToInt(progressNumber.x), Mathf.RoundToInt(progressNumber.y), false);
+
         Instantiate(dustPoof, transform.position, Quaternion.identity);
         NumberOfBugsLeft.instance.RemoveOneBug();
         Destroy(gameObject);

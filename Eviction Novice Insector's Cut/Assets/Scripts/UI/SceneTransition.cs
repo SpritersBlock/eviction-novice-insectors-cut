@@ -96,4 +96,9 @@ public class SceneTransition : MonoBehaviour
             }
         }
     }
+
+    public void StartTransition()
+    {
+        anim.SetBool("TransitioningScenes", true);
+    }
 }

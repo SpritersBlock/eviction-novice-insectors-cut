@@ -149,10 +149,4 @@ public class PauseMenuManager : MonoBehaviour
         newNavi.selectOnLeft = lastSelectedLeftButton;
         mapButton.navigation = newNavi;
     }
-
-    public void OptionsPanelActiveness(bool activeness)
-    {
-        optionsPanel.SetActive(activeness);
-        pausePanel.SetActive(!activeness);
-    }
 }

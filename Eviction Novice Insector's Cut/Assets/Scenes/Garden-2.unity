@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a6f267bebc47c6a48b71f95376eb8080,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -167,6 +170,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -249,6 +253,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -331,6 +336,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -355,6 +361,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &60701304
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -451,6 +458,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -657,6 +665,7 @@ GameObject:
   - component: {fileID: 818653657}
   - component: {fileID: 818653656}
   - component: {fileID: 818653655}
+  - component: {fileID: 818653660}
   m_Layer: 0
   m_Name: Cool Flower
   m_TagString: Untagged
@@ -677,6 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b05f9b6781cebf34fb942f6b57ed7f64, type: 2}
+  progressNumber: {x: 1, y: 4}
 --- !u!135 &818653656
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -733,6 +743,67 @@ Transform:
   - {fileID: 180175012}
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &818653660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818653654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &939151782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939151784}
+  - component: {fileID: 939151783}
+  m_Layer: 0
+  m_Name: SceneProgressChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939151783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939151782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f63f3f3478768548bc404796512ca86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalComponents:
+  - {fileID: 8593295738427918368}
+  - {fileID: 2019005857}
+  - {fileID: 989023677}
+  - {fileID: 1212079163}
+  - {fileID: 818653660}
+--- !u!4 &939151784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939151782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -851,6 +922,7 @@ GameObject:
   - component: {fileID: 989023674}
   - component: {fileID: 989023673}
   - component: {fileID: 989023672}
+  - component: {fileID: 989023677}
   m_Layer: 0
   m_Name: Peanut Clock (1)
   m_TagString: Untagged
@@ -871,6 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 23b6b266483bc9841903322d14355701, type: 2}
+  progressNumber: {x: 1, y: 2}
 --- !u!135 &989023673
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -928,6 +1001,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989023677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989023671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077793351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1132,7 @@ GameObject:
   - component: {fileID: 1212079160}
   - component: {fileID: 1212079159}
   - component: {fileID: 1212079158}
+  - component: {fileID: 1212079163}
   m_Layer: 0
   m_Name: Cool Flower
   m_TagString: Untagged
@@ -1067,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b05f9b6781cebf34fb942f6b57ed7f64, type: 2}
+  progressNumber: {x: 1, y: 3}
 --- !u!135 &1212079159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1124,6 +1211,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212079163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212079157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308164303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1269,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1373,6 +1473,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1712,6 +1813,7 @@ GameObject:
   - component: {fileID: 2019005853}
   - component: {fileID: 2019005856}
   - component: {fileID: 2019005855}
+  - component: {fileID: 2019005857}
   m_Layer: 0
   m_Name: Peanut Clock
   m_TagString: Untagged
@@ -1776,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 23b6b266483bc9841903322d14355701, type: 2}
+  progressNumber: {x: 1, y: 1}
 --- !u!135 &2019005856
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1789,6 +1892,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.16
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2019005857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019005851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2044514021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1904,6 +2019,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2310,6 +2426,7 @@ MonoBehaviour:
   canFlip: 1
   dustPoof: {fileID: 3974213644540268947, guid: 12e84a5e49ab2aa44a870e25ff8cb8b1,
     type: 3}
+  progressNumber: {x: 1, y: 0}
 --- !u!4 &8593295738427918362
 Transform:
   m_ObjectHideFlags: 0
@@ -2394,6 +2511,7 @@ GameObject:
   - component: {fileID: 8593295738427918363}
   - component: {fileID: 8593295738427918360}
   - component: {fileID: 8593295738427918361}
+  - component: {fileID: 8593295738427918368}
   m_Layer: 0
   m_Name: NPC_Silkworm
   m_TagString: Untagged
@@ -2401,3 +2519,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8593295738427918368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593295738427918367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -27,13 +27,25 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void SetSelectedObject(GameObject newSelection)
+    public void SetSelectedObject(Button newSelection)
     {
-        EventSystem.current.SetSelectedGameObject(newSelection);
+        newSelection.Select();
+        newSelection.OnSelect(null);
     }
 
     public void QuitGame()
     {
+        StartCoroutine(QuitGameFancy());
+    }
+
+    IEnumerator QuitGameFancy()
+    {
+        SceneTransition.instance.StartTransition();
+
+        yield return new WaitForSeconds(1f);
+
         Application.Quit();
+
+        yield return null;
     }
 }

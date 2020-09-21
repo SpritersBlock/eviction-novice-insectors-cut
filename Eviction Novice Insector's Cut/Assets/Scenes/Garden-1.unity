@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 818653657}
   - component: {fileID: 818653656}
   - component: {fileID: 818653655}
+  - component: {fileID: 818653660}
   m_Layer: 0
   m_Name: Cool Flower
   m_TagString: Untagged
@@ -663,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b05f9b6781cebf34fb942f6b57ed7f64, type: 2}
+  progressNumber: {x: 0, y: 4}
 --- !u!135 &818653656
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -720,6 +722,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &818653660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818653654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +851,7 @@ GameObject:
   - component: {fileID: 989023674}
   - component: {fileID: 989023673}
   - component: {fileID: 989023672}
+  - component: {fileID: 989023677}
   m_Layer: 0
   m_Name: Peanut Clock (1)
   m_TagString: Untagged
@@ -857,6 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 23b6b266483bc9841903322d14355701, type: 2}
+  progressNumber: {x: 0, y: 2}
 --- !u!135 &989023673
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -914,6 +930,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989023677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989023671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077793351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1164,7 @@ GameObject:
   - component: {fileID: 1212079160}
   - component: {fileID: 1212079159}
   - component: {fileID: 1212079158}
+  - component: {fileID: 1212079163}
   m_Layer: 0
   m_Name: Cool Flower
   m_TagString: Untagged
@@ -1156,6 +1185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b05f9b6781cebf34fb942f6b57ed7f64, type: 2}
+  progressNumber: {x: 0, y: 3}
 --- !u!135 &1212079159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1213,6 +1243,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212079163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212079157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308164303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1908,7 @@ MonoBehaviour:
   canFlip: 1
   dustPoof: {fileID: 3974213644540268947, guid: 12e84a5e49ab2aa44a870e25ff8cb8b1,
     type: 3}
+  progressNumber: {x: 0, y: 0}
 --- !u!135 &1662581944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2150,6 +2193,56 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1770938143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770938145}
+  - component: {fileID: 1770938144}
+  m_Layer: 0
+  m_Name: SceneProgressChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1770938144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770938143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f63f3f3478768548bc404796512ca86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalComponents:
+  - {fileID: 8593295737896810123}
+  - {fileID: 2019005857}
+  - {fileID: 989023677}
+  - {fileID: 1212079163}
+  - {fileID: 818653660}
+  - {fileID: 2009999365}
+--- !u!4 &1770938145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770938143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805399810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6630684793957441779, guid: 7bd03260b93098541a463a51d81d06b2,
@@ -2346,7 +2439,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 2
     s_comment:
-    - text: '> Garden-1!'
+    - text: '> Garden-2!'
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: -1
@@ -2407,6 +2500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009999364}
   - component: {fileID: 2009999363}
+  - component: {fileID: 2009999365}
   m_Layer: 0
   m_Name: SnailNull
   m_TagString: Untagged
@@ -2428,6 +2522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkingClone: {fileID: 1662581942}
   movingClone: {fileID: 1701523540}
+  progressNumber: {x: 0, y: 5}
 --- !u!4 &2009999364
 Transform:
   m_ObjectHideFlags: 0
@@ -2444,6 +2539,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2009999365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009999362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2019005851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,6 +2564,7 @@ GameObject:
   - component: {fileID: 2019005853}
   - component: {fileID: 2019005856}
   - component: {fileID: 2019005855}
+  - component: {fileID: 2019005857}
   m_Layer: 0
   m_Name: Peanut Clock
   m_TagString: Untagged
@@ -2521,6 +2629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 23b6b266483bc9841903322d14355701, type: 2}
+  progressNumber: {x: 0, y: 1}
 --- !u!135 &2019005856
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2534,6 +2643,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.16
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2019005857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019005851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2096524476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3177,13 +3298,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164078559483804148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.335, z: 0}
+  m_LocalRotation: {x: -0, y: -0.96592593, z: -0, w: 0.25881884}
+  m_LocalPosition: {x: -1.78, y: 0.53, z: 4.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -150, z: 0}
 --- !u!23 &1587545475705550609
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3743,6 +3864,7 @@ GameObject:
   - component: {fileID: 8593295737896810125}
   - component: {fileID: 8593295737896810126}
   - component: {fileID: 8593295737896810127}
+  - component: {fileID: 8593295737896810123}
   m_Layer: 0
   m_Name: NPC_Bee
   m_TagString: Untagged
@@ -3900,7 +4022,7 @@ MonoBehaviour:
     - text: Um. I'm flattered but that's too cool of a flower.
       extraData: ExtraData
       inputSetIndex: 6
-      outputNodeIndex: -1
+      outputNodeIndex: 8
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -3935,6 +4057,62 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: '> No it isn''t!'
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 10
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: '> Yes it is!'
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 9
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: JEEZ laWEEZ you don't need to hurt my feelings about it.
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Well shucks, buster. Maybe I misjudged you. Later, skater.
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: 2
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: SceneTransitionCanvas
@@ -3964,6 +4142,46 @@ MonoBehaviour:
     outActionIndex: -1
     ovrStartNode: -1
     renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Dialogue
+    methodName: RemoveItemsOfThisType
+    paramType: 2
+    gotoNode: -1
+    param_bool: 0
+    param_string: Cool Flower
+    param_int: 0
+    param_float: 0
+    ID: 13
+    outPlayerIndex: -1
+    outActionIndex: 3
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: NPC_Bee
+    methodName: MakeBugDisappear
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 14
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+--- !u!114 &8593295737896810123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593295737896810121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8593295737896810124
 Transform:
   m_ObjectHideFlags: 0
@@ -4022,3 +4240,4 @@ MonoBehaviour:
   canFlip: 1
   dustPoof: {fileID: 3974213644540268947, guid: 12e84a5e49ab2aa44a870e25ff8cb8b1,
     type: 3}
+  progressNumber: {x: 0, y: 0}
