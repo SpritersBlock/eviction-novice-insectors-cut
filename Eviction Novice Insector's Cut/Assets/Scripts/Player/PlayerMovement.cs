@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Hop")]
     [SerializeField] float hopSpeed;
     [SerializeField] GameObject hopDustPFX;
+    [SerializeField] ParticleSystem sprintPFX;
     [SerializeField] LayerMask layerMask;
     [SerializeField] float groundRaycastLength;
 
@@ -73,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
         HandleMovement();
 
         HandleSpriteFlipping();
+
+        if (sprinting)
+        {
+            SprintPFX();
+        }
     }
 
     void HandleMovement() //For things like speed and animations
@@ -121,6 +127,26 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, hopSpeed, 0), ForceMode.Impulse);
             hopDustPFX.SetActive(true);
+        }
+    }
+
+    void SprintPFX()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, groundRaycastLength, layerMask)) //if player is grounded
+        {
+            if (!sprintPFX.isPlaying)
+            {
+                sprintPFX.Play();
+            }
+        }
+        else
+        {
+            if (sprintPFX.isPlaying)
+            {
+                sprintPFX.Stop();
+            }
         }
     }
 }
