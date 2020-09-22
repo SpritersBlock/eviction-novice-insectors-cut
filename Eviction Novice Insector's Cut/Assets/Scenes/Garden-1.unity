@@ -628,7 +628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &818653654
 GameObject:
@@ -715,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818653654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.34, y: 2.01, z: 0}
+  m_LocalPosition: {x: -15.34, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 180175012}
@@ -923,7 +923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989023671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.33, y: 2.01, z: 3.78}
+  m_LocalPosition: {x: -10.33, y: 1, z: 3.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1550925145}
@@ -1139,18 +1139,6 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 1159134152}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1169053247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5269229272172800570, guid: c4a1d2e9216d7f24ea1494ccc717ea69,
-    type: 3}
-  m_PrefabInstance: {fileID: 5269229271005363205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9d13ee163017a4a87bb4218cf3bc5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1212079157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212079157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.41, y: 2.01, z: 0}
+  m_LocalPosition: {x: -11.41, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1308164304}
@@ -1387,7 +1375,7 @@ PrefabInstance:
     - target: {fileID: 5231067775997173439, guid: d7bec4165cce97147a2ddd3743221f56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5231067775997173439, guid: d7bec4165cce97147a2ddd3743221f56,
         type: 3}
@@ -1971,13 +1959,107 @@ MonoBehaviour:
   defaultPlayerSprite: {fileID: 21300000, guid: 21b976d2576ec064cb87d70b6262a564,
     type: 3}
   targetManager: {fileID: 0}
-  preload: 0
+  preload: 1
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags: []
-  S_actionNodes: []
+  S_playerDiags:
+  - commentCount: 4
+    s_comment:
+    - text: .....Oh, 'sup.
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: .....You need me out of here? Oh, a'ight.
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: .....I'll be on my way now.
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: .....Later, skater.
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: .....Man, ain't those clocks so dang fast?
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: .....Man, that's a coooool flower you got there.
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: .....Oh, for me? Nah, it's all good. You keep it.
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: SnailNull
+    methodName: MakeSnailStartMoving
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!4 &1662581947
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,6 +2114,16 @@ MonoBehaviour:
   - Up and at 'em...
   - On our way, buckaroo...
   - Ride like the wind...
+  - I'm gettin', I'm gettin'...
+  - Gotta go... pretty quick...
+  - Comin' round the mountain...
+  - D'you ever think about... dogs...
+  - Speed demon...
+  - Gettin' deja vu over here...
+  - '''Scuse me, takin'' a break...'
+  - Pitter patter... pitter patter...
+  - Zoom zoom... to the moon moon...
+  - '*Motorcycle noises...*'
   snailText: {fileID: 1552964864}
   rb: {fileID: 1701523545}
   snailSpeed: 0.02
@@ -2312,7 +2404,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
@@ -2333,7 +2425,7 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 2
+  - commentCount: 3
     s_comment:
     - text: '> get me outta here'
       extraData: ExtraData
@@ -2343,10 +2435,18 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: '> gimme a hug.'
+    - text: '> nvm i don''t wanna talk'
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: '> gimme a hug'
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 10
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -2357,12 +2457,20 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 1
-  - commentCount: 1
+  - commentCount: 2
     s_comment:
-    - text: Where would you even want to GO though?
+    - text: You'll want to use the map in your pause menu for that one, buddy.
       extraData: ExtraData
       inputSetIndex: 2
-      outputNodeIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Leave me out of your personal affairs.
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -2375,7 +2483,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: You don't want none of this, bucko.
+    - text: You know you can press escape to cancel dialogue, right?
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: -1
@@ -2426,7 +2534,7 @@ MonoBehaviour:
     - text: Um. I'm flattered but that's too cool of a flower.
       extraData: ExtraData
       inputSetIndex: 6
-      outputNodeIndex: -1
+      outputNodeIndex: 7
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -2439,53 +2547,101 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 2
     s_comment:
-    - text: '> Garden-2!'
+    - text: '> No it isn''t!'
       extraData: ExtraData
       inputSetIndex: 7
-      outputNodeIndex: -1
-      outActionIndex: 0
+      outputNodeIndex: 9
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: '> Title screen!'
+    - text: '> Yes it is!'
       extraData: ExtraData
       inputSetIndex: 7
-      outputNodeIndex: -1
-      outActionIndex: 1
+      outputNodeIndex: 8
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 8
+    ID: 10
     pTag: 
     sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: JEEZ laWEEZ you don't need to hurt my feelings about it.
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Well shucks, buster. Maybe I misjudged you. Later, skater.
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: no
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: SceneTransitionCanvas
-    methodName: CallTransitionCoroutineRandomMask
+    gameObjectName: Dialogue
+    methodName: RemoveItemsOfThisType
     paramType: 2
     gotoNode: -1
     param_bool: 0
-    param_string: Garden-2
+    param_string: Cool Flower
     param_int: 0
     param_float: 0
-    ID: 5
+    ID: 13
     outPlayerIndex: -1
-    outActionIndex: -1
+    outActionIndex: 1
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: SceneTransitionCanvas
-    methodName: CallTransitionCoroutineRandomMask
-    paramType: 2
+    gameObjectName: NPC_Bee
+    methodName: MakeBugDisappear
+    paramType: 0
     gotoNode: -1
     param_bool: 0
-    param_string: Title Screen
+    param_string: 
     param_int: 0
     param_float: 0
-    ID: 9
+    ID: 14
     outPlayerIndex: -1
     outActionIndex: -1
     ovrStartNode: -1
@@ -2537,7 +2693,7 @@ Transform:
   - {fileID: 1662581947}
   - {fileID: 1701523544}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2009999365
 MonoBehaviour:
@@ -2609,7 +2765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019005851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.75, y: 2.01, z: 0}
+  m_LocalPosition: {x: -7.75, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2141540318}
@@ -2655,6 +2811,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fedc0997b901346a6d42b791bdf0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2074051047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074051048}
+  - component: {fileID: 2074051050}
+  - component: {fileID: 2074051049}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074051048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074051047}
+  m_LocalRotation: {x: 0, y: -0.9659258, z: 0, w: 0.2588191}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151388028371217103}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -150, z: 0}
+--- !u!23 &2074051049
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074051047}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2dad5f4ed1888664a8abeb92ef5e02a8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2074051050
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074051047}
+  m_Mesh: {fileID: -2432090755550338912, guid: a79242f855dd5664d87bec1554b164ee, type: 3}
 --- !u!1001 &2096524476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2955,7 +3192,7 @@ PrefabInstance:
     - target: {fileID: 4863492882584556358, guid: 7bd03260b93098541a463a51d81d06b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4863492882584556358, guid: 7bd03260b93098541a463a51d81d06b2,
         type: 3}
@@ -3298,54 +3535,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164078559483804148}
-  m_LocalRotation: {x: -0, y: -0.96592593, z: -0, w: 0.25881884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.78, y: 0.53, z: 4.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2074051048}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -150, z: 0}
---- !u!23 &1587545475705550609
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164078559483804148}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2dad5f4ed1888664a8abeb92ef5e02a8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1874738935474535822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3396,7 +3593,7 @@ PrefabInstance:
     - target: {fileID: 1874738935598737292, guid: 416a752a16aea834aa125de161917837,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1874738935598737292, guid: 416a752a16aea834aa125de161917837,
         type: 3}
@@ -3539,14 +3736,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d03b29307fcd4498ea232bebd3d48, type: 3}
---- !u!33 &2823090747787842437
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164078559483804148}
-  m_Mesh: {fileID: -2432090755550338912, guid: a79242f855dd5664d87bec1554b164ee, type: 3}
 --- !u!1001 &3314043551078697253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3554,16 +3743,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3314043551827522187, guid: d852f63e3413dc544abf85714a39923b,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1169053247}
-    - target: {fileID: 3314043551827522187, guid: d852f63e3413dc544abf85714a39923b,
-        type: 3}
-      propertyPath: canMove
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3314043551827522188, guid: d852f63e3413dc544abf85714a39923b,
         type: 3}
       propertyPath: diagUI
@@ -3756,7 +3935,7 @@ PrefabInstance:
     - target: {fileID: 5269229270326069278, guid: c4a1d2e9216d7f24ea1494ccc717ea69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5269229270326069278, guid: c4a1d2e9216d7f24ea1494ccc717ea69,
         type: 3}
@@ -3839,8 +4018,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151388028371217103}
-  - component: {fileID: 2823090747787842437}
-  - component: {fileID: 1587545475705550609}
   - component: {fileID: 1968924783}
   - component: {fileID: 1968924784}
   - component: {fileID: 1968924785}
@@ -3850,7 +4027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8593295737896810121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,7 +4106,7 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 2
+  - commentCount: 3
     s_comment:
     - text: '> get me outta here'
       extraData: ExtraData
@@ -3939,10 +4116,18 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: '> gimme a hug.'
+    - text: '> nvm i don''t wanna talk'
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: '> gimme a hug'
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 10
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -3953,12 +4138,20 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 1
-  - commentCount: 1
+  - commentCount: 2
     s_comment:
-    - text: Where would you even want to GO though?
+    - text: You'll want to use the map in your pause menu for that one, buddy.
       extraData: ExtraData
       inputSetIndex: 2
-      outputNodeIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Leave me out of your personal affairs.
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -3971,7 +4164,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: You don't want none of this, bucko.
+    - text: You know you can press escape to cancel dialogue, right?
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: -1
@@ -4022,7 +4215,7 @@ MonoBehaviour:
     - text: Um. I'm flattered but that's too cool of a flower.
       extraData: ExtraData
       inputSetIndex: 6
-      outputNodeIndex: 8
+      outputNodeIndex: 7
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -4035,42 +4228,18 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 2
     s_comment:
-    - text: '> Garden-2!'
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: -1
-      outActionIndex: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: '> Title screen!'
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: -1
-      outActionIndex: 1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 8
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 2
-    s_comment:
     - text: '> No it isn''t!'
       extraData: ExtraData
-      inputSetIndex: 8
-      outputNodeIndex: 10
+      inputSetIndex: 7
+      outputNodeIndex: 9
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: '> Yes it is!'
       extraData: ExtraData
-      inputSetIndex: 8
-      outputNodeIndex: 9
+      inputSetIndex: 7
+      outputNodeIndex: 8
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -4085,7 +4254,7 @@ MonoBehaviour:
     s_comment:
     - text: JEEZ laWEEZ you don't need to hurt my feelings about it.
       extraData: ExtraData
-      inputSetIndex: 9
+      inputSetIndex: 8
       outputNodeIndex: -1
       outActionIndex: -1
       sprites: {fileID: 0}
@@ -4101,9 +4270,9 @@ MonoBehaviour:
     s_comment:
     - text: Well shucks, buster. Maybe I misjudged you. Later, skater.
       extraData: ExtraData
-      inputSetIndex: 10
+      inputSetIndex: 9
       outputNodeIndex: -1
-      outActionIndex: 2
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -4113,35 +4282,23 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  S_actionNodes:
-  - pauseHere: 0
-    gameObjectName: SceneTransitionCanvas
-    methodName: CallTransitionCoroutineRandomMask
-    paramType: 2
-    gotoNode: -1
-    param_bool: 0
-    param_string: Garden-2
-    param_int: 0
-    param_float: 0
+  - commentCount: 1
+    s_comment:
+    - text: no
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
     ID: 5
-    outPlayerIndex: -1
-    outActionIndex: -1
-    ovrStartNode: -1
-    renameDialogue: 
-  - pauseHere: 0
-    gameObjectName: SceneTransitionCanvas
-    methodName: CallTransitionCoroutineRandomMask
-    paramType: 2
-    gotoNode: -1
-    param_bool: 0
-    param_string: Title Screen
-    param_int: 0
-    param_float: 0
-    ID: 9
-    outPlayerIndex: -1
-    outActionIndex: -1
-    ovrStartNode: -1
-    renameDialogue: 
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
   - pauseHere: 0
     gameObjectName: Dialogue
     methodName: RemoveItemsOfThisType
@@ -4153,7 +4310,7 @@ MonoBehaviour:
     param_float: 0
     ID: 13
     outPlayerIndex: -1
-    outActionIndex: 3
+    outActionIndex: 1
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
@@ -4195,7 +4352,7 @@ Transform:
   m_Children:
   - {fileID: 497000517}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8593295737896810125
 CapsuleCollider:

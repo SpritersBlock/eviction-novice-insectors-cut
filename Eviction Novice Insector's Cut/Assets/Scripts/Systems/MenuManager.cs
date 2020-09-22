@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] menuObjects;
+    public GameObject[] menuObjects;
 
     public void GoToScene(string sceneToGoTo)
     {

@@ -32,8 +32,8 @@ RectTransform:
   - {fileID: 6316234543264705549}
   - {fileID: 1909194839126751277}
   - {fileID: 5105913659652184476}
-  - {fileID: 6822128052720438873}
   - {fileID: 6076974425954359229}
+  - {fileID: 6822128052720438873}
   m_Father: {fileID: 2585977623596683363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -332,6 +332,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Garden-1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3744096596916269846}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Unpause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1187541502148434697
@@ -842,7 +854,7 @@ RectTransform:
   m_Children:
   - {fileID: 3472260892928667953}
   m_Father: {fileID: 4433341537774659617}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -940,6 +952,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Title Screen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3744096596916269846}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Unpause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2444659543526657916
@@ -3291,7 +3315,6 @@ RectTransform:
   m_Children:
   - {fileID: 2585977623596683363}
   - {fileID: 3759312608522785716}
-  - {fileID: 4149830033544429013}
   m_Father: {fileID: 4863492882584556358}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3330,6 +3353,7 @@ MonoBehaviour:
   pausePanel: {fileID: 2672255536034998558}
   paused: 0
   optionsPanel: {fileID: 3759312608522785723}
+  menuManager: {fileID: 706769848541951824}
   leftButtons:
   - {fileID: 3646611308204423219}
   - {fileID: 4772091425534287440}
@@ -3346,6 +3370,16 @@ MonoBehaviour:
   - Sonic the Hedgehog is not a bug.
   - Flies are fast.
   - Fireflies light up by igniting their own poop.
+  - Bees and wasps are kinda similar but not the same.
+  - Ants are pretty strong, but not as strong as me.
+  - The Bee Movie does not in fact star a bee, but Jerry Seinfeld.
+  - I don't know many bug facts actually.
+  - Eviction Novice is a game.
+  - This game was originally going to have a hedgehog character.
+  - The BIG BIRD was an idea from the original game.
+  - This game has different scenes for different areas. This is new.
+  - The ant queen is the only one allowed to reproduce. I think?
+  - Flies can see EVERYTHING.
   bugFactText: {fileID: 5031829598926163736}
   numberOfBugsLeftSlider: {fileID: 2322207505612061285}
   numberOfBugsLeftText: {fileID: 3608086466450861646}
@@ -4586,6 +4620,18 @@ MonoBehaviour:
           m_StringArgument: Garden-2
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3744096596916269846}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Unpause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7113115735565367189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5335,7 +5381,7 @@ GameObject:
   - component: {fileID: 8211828303539835293}
   - component: {fileID: 3921831489908450926}
   m_Layer: 5
-  m_Name: ButtonQuit
+  m_Name: ButtonLoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5354,7 +5400,7 @@ RectTransform:
   m_Children:
   - {fileID: 7219791029548928466}
   m_Father: {fileID: 4433341537774659617}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5441,19 +5487,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 797212507495047981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 706769848541951824}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3921831489908450926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5495,7 +5529,7 @@ GameObject:
   - component: {fileID: 383976351566999213}
   - component: {fileID: 9213109116092245401}
   m_Layer: 5
-  m_Name: ButtonQuitText
+  m_Name: ButtonLoadText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5548,7 +5582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Load
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a33e72e06d127654db13a438286d3c35, type: 2}
   m_sharedMaterial: {fileID: 4974706188262426104, guid: a33e72e06d127654db13a438286d3c35,
@@ -6065,168 +6099,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &8747418914992917165
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2474968888077276314}
-    m_Modifications:
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868132645812089, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_Name
-      value: QuitConfirm
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 706769848541951824}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 706769848541951824}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetSelectedObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679868134186988695, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 8211828303539835293}
-    - target: {fileID: 4679868134440346333, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 706769848541951824}
-    - target: {fileID: 4679868134440346333, guid: 5011af57f0c1a35458a7f17e1068a400,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5011af57f0c1a35458a7f17e1068a400, type: 3}
---- !u!224 &4149830033544429013 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4679868132645812088, guid: 5011af57f0c1a35458a7f17e1068a400,
-    type: 3}
-  m_PrefabInstance: {fileID: 8747418914992917165}
-  m_PrefabAsset: {fileID: 0}

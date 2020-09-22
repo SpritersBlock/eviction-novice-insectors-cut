@@ -69,7 +69,7 @@ public class PlayerVIDE : MonoBehaviour
 
     void TryInteract()
     {
-        if (inTrigger && !SceneTransition.instance.transitioning)
+        if (inTrigger && !SceneTransition.instance.transitioning && !PauseMenuManager.instance.paused)
         {
             DialogueUIManager.instance.Interact(inTrigger);
             return;

@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-using System.Diagnostics;
 using DG.Tweening;
+using VIDE_Data;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -14,6 +12,7 @@ public class PauseMenuManager : MonoBehaviour
     public bool paused;
     public static PauseMenuManager instance;
     [SerializeField] GameObject optionsPanel;
+    [SerializeField] MenuManager menuManager;
 
     [Header("Buttons On Left")]
     [SerializeField] Button[] leftButtons;
@@ -47,24 +46,28 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Start"))
         {
-            if (PlayerMovement.instance.canMove && !paused)
+            if (PlayerMovement.instance.canMove && !paused && !VD.isActive)
             {
                 Pause();
             }
-            else if (paused)// && !currentlyInMapSelection)
+            else if (paused && menuManager.menuObjects[0].activeSelf)
             {
                 Unpause();            
             }
         }
         if (Input.GetButtonDown("Cancel"))
         {
-            if (currentlyInMapSelection)
+            if (paused)
             {
-                ExitMapSelection();
-            }
-            else
-            {
-                Unpause();
+                if (currentlyInMapSelection)
+                {
+                    ExitMapSelection();
+                }
+                else
+                {
+                    menuManager.ActivateMenu(0);
+                    Unpause();
+                }
             }
         }
     }
@@ -80,8 +83,8 @@ public class PauseMenuManager : MonoBehaviour
         leftButtons[0].OnSelect(null);
 
         pausePanel.transform.DOKill();
-        pausePanel.transform.localPosition = new Vector3(0, 300);
-        pausePanel.transform.DOLocalMoveY(0, .5f).SetEase(Ease.OutExpo);
+        pausePanel.transform.localPosition = new Vector3(0, 800);
+        pausePanel.transform.DOLocalMoveY(0, .4f).SetEase(Ease.OutExpo);
     }
 
     public void Unpause()
@@ -91,7 +94,7 @@ public class PauseMenuManager : MonoBehaviour
 
         pausePanel.transform.DOKill();
         pausePanel.transform.localPosition = new Vector3(0, 0);
-        pausePanel.transform.DOLocalMoveY(300, .3f).SetEase(Ease.InBack).OnComplete(DeactivatePausePanel);
+        pausePanel.transform.DOLocalMoveY(800, .6f).SetEase(Ease.InBack).OnComplete(DeactivatePausePanel);
     }
 
     void DeactivatePausePanel()
