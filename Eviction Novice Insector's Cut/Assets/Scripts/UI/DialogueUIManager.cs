@@ -46,6 +46,8 @@ public class DialogueUIManager : MonoBehaviour
     //We'll be using this to store references of the current player choices
     private List<TextMeshProUGUI> currentChoices = new List<TextMeshProUGUI>();
 
+    int storedStartNode;
+
     //With this we can start a coroutine and stop it. Used to animate text
     IEnumerator NPC_TextAnimator;
 
@@ -336,6 +338,8 @@ public class DialogueUIManager : MonoBehaviour
     public void EndDialogue(VD.NodeData data)
     {
         //CheckTasks();
+        StopCoroutine(NPC_TextAnimator);	
+        animatingText = false;
         VD.OnActionNode -= ActionHandler;
         VD.OnNodeChange -= UpdateUI;
         VD.OnEnd -= EndDialogue;
@@ -439,7 +443,6 @@ public class DialogueUIManager : MonoBehaviour
         }
         else //Stuff we do right before the dialogue begins
         {
-            int storedStartNode = -1;
             if (!string.IsNullOrEmpty(Inventory.instance.currentlySelectedItem))
             {
                 storedStartNode = dialogue.overrideStartNode;

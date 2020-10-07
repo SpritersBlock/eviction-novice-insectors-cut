@@ -2421,7 +2421,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 4
     s_comment:
-    - text: .....Oh, 'sup.
+    - text: .....Oh, 'sup. I'm Snail.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -2429,7 +2429,7 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: .....You need me out of here? Oh, a'ight.
+    - text: .....You need me out of here? Oh, a'ight. No problem, Boblem.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -3067,7 +3067,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 0
+  notuptodate: 1
   startp: 0
   loadtag: 
   langs: []
@@ -4785,7 +4785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8164078559483804149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4919,7 +4919,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -4943,7 +4943,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -5063,7 +5063,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 10
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -5101,6 +5101,20 @@ MonoBehaviour:
     outPlayerIndex: -1
     outActionIndex: -1
     ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[NONE]'
+    methodName: '[NONE]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 8
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 8
     renameDialogue: 
 --- !u!114 &8593295737896810123
 MonoBehaviour:
