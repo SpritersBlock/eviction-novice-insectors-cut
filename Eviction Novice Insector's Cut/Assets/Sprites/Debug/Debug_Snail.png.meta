@@ -1,19 +1,43 @@
 fileFormatVersion: 2
-guid: 468a8540659e3d2468e48ed2d536d794
+guid: c11c3067b41ed5f4bb5dfcb5fcaae00f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6683615111705859281
-    second: Bee_0
+      213: -8246084291716530006
+    second: Debug_Snail_0
   - first:
-      213: 2332470280317142563
-    second: Bee_1
+      213: 4822861122802861011
+    second: Debug_Snail_1
   - first:
-      213: 7745360055802708760
-    second: Bee_2
+      213: 1066654485560900262
+    second: Debug_Snail_2
   - first:
-      213: -9082881888148649930
-    second: Bee_3
+      213: 6732737685988322667
+    second: Debug_Snail_3
+  - first:
+      213: 5269940920415831442
+    second: Debug_Snail_4
+  - first:
+      213: 8856716357830848477
+    second: Debug_Snail_5
+  - first:
+      213: 998727395438996755
+    second: Debug_Snail_6
+  - first:
+      213: 6263566450015770460
+    second: Debug_Snail_7
+  - first:
+      213: 8657669870310327093
+    second: Debug_Snail_8
+  - first:
+      213: 3655070259488204608
+    second: Debug_Snail_9
+  - first:
+      213: -8043246401948736404
+    second: Debug_Snail_10
+  - first:
+      213: -8870676167229523434
+    second: Debug_Snail_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee_0
+      name: Debug_Snail_4
       rect:
         serializedVersion: 2
-        x: 37
-        y: 386
-        width: 178
-        height: 266
+        x: 24
+        y: 407
+        width: 375
+        height: 338
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d419a46888f0cc50800000000000000
-      internalID: 6683615111705859281
+      spriteID: 2954ea48857922940800000000000000
+      internalID: 5269940920415831442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee_1
+      name: Debug_Snail_5
       rect:
         serializedVersion: 2
-        x: 301
-        y: 386
-        width: 176
-        height: 265
+        x: 464
+        y: 408
+        width: 378
+        height: 335
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 326857bac599e5020800000000000000
-      internalID: 2332470280317142563
+      spriteID: ddf26e04a9069ea70800000000000000
+      internalID: 8856716357830848477
       vertices: []
       indices: 
       edges: []
