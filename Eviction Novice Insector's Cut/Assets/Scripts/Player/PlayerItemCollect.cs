@@ -11,6 +11,7 @@ public class PlayerItemCollect : MonoBehaviour
     [SerializeField] CanvasGroup youGotObject;
     [SerializeField] TextMeshProUGUI itemNameText;
     [SerializeField] TextMeshProUGUI itemDescriptionText;
+    [SerializeField] Animator cancelTextAnim;
 
     private void Awake()
     {
@@ -42,6 +43,8 @@ public class PlayerItemCollect : MonoBehaviour
         youGotObject.DOFade(1, 0.4f);
 
         Inventory.instance.FadeInventorySlots(0.1f);
+
+        cancelTextAnim.SetTrigger("FadeIn");
     }
 
     private void Update()
