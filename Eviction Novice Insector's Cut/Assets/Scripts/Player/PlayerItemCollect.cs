@@ -6,6 +6,9 @@ using DG.Tweening;
 
 public class PlayerItemCollect : MonoBehaviour
 {
+    bool canExit;
+    public bool inItemGetScreen;
+
     public static PlayerItemCollect instance;
 
     [SerializeField] CanvasGroup youGotObject;
@@ -20,6 +23,9 @@ public class PlayerItemCollect : MonoBehaviour
 
     public void ItemCollect(Item item)
     {
+        canExit = false;
+        inItemGetScreen = true;
+        Invoke("AllowPlayersToEscape", 0.1f);
         PlayerMovement.instance.canMove = false;
         CameraFollow.instance.currentZoomDistance = CameraFollow.instance.itemZoomDistance;
 
@@ -49,7 +55,7 @@ public class PlayerItemCollect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") && canExit)
         {
             if (!PlayerMovement.instance.canMove)
             {
@@ -66,5 +72,11 @@ public class PlayerItemCollect : MonoBehaviour
         youGotObject.gameObject.SetActive(false);
         CameraFollow.instance.currentZoomDistance = CameraFollow.instance.playerDefaultDistance;
         Inventory.instance.FadeInventorySlots(0.75f);
+        inItemGetScreen = false;
+    }
+
+    void AllowPlayersToEscape()
+    {
+        canExit = true;
     }
 }

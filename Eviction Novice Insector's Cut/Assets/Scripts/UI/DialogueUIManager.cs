@@ -467,6 +467,10 @@ public class DialogueUIManager : MonoBehaviour
                     {
                         dialogue.overrideStartNode = 2;
                     }
+                    if (dialogue.alias == "Spider")
+                    {
+                        dialogue.overrideStartNode = 8;
+                    }
                     return false;
                 }
                 if (Inventory.instance.currentlySelectedItem == "Cool Flower")
@@ -482,6 +486,10 @@ public class DialogueUIManager : MonoBehaviour
                     if (dialogue.alias == "Snail")
                     {
                         dialogue.overrideStartNode = 3;
+                    }
+                    if (dialogue.alias == "Spider")
+                    {
+                        dialogue.overrideStartNode = 10;
                     }
                     return false;
                 }

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ead214bdb67a8748a41be793945cde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfBugsTotal: 3
+  numberOfBugsTotal: 5
   numberOfBugsLeft: 1
 --- !u!114 &312226374767397261
 MonoBehaviour:
