@@ -14,6 +14,8 @@ public class GlobalProgressChecker : MonoBehaviour
     //0,3 flower 1
     //0,4 flower 2
     //0,5 snail
+    //0,6 spider
+    //0,7 boombox
 
     public bool[] garden2ProgressCheck;
     //1,0 silkworm
