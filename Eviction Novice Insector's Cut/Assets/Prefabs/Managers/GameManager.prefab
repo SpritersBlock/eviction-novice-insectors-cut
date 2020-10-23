@@ -58,5 +58,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ededd37a5417a4cbb3137a47adeb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garden1ProgressCheck: 010101010101010101
+  garden1ProgressCheck: 01010101010101010101
   garden2ProgressCheck: 0101010101
