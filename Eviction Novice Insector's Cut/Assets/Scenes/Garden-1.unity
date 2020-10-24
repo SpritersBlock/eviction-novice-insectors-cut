@@ -2410,6 +2410,7 @@ MonoBehaviour:
   - CrazyCap
   - DEMO_Condition
   - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
@@ -2420,7 +2421,7 @@ MonoBehaviour:
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 8
+  assignedIndex: 9
   assignedID: 80459
   assignedDialogue: EN_Spider
   interactionCount: 0
@@ -2431,7 +2432,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
@@ -2522,7 +2523,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 4
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 5
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2586,7 +2587,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 4
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2642,7 +2643,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 10
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2658,7 +2659,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 11
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2674,7 +2675,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 12
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2712,6 +2713,62 @@ MonoBehaviour:
     outPlayerIndex: -1
     outActionIndex: -1
     ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 15
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 16
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 17
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 18
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
     renameDialogue: 
 --- !u!4 &1053895116
 Transform:
@@ -5078,6 +5135,7 @@ MonoBehaviour:
   - CrazyCap
   - DEMO_Condition
   - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
@@ -5088,7 +5146,7 @@ MonoBehaviour:
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 7
+  assignedIndex: 8
   assignedID: 56385
   assignedDialogue: EN_Snail
   interactionCount: 0
@@ -5099,7 +5157,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
@@ -5150,7 +5208,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -5166,7 +5224,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -5198,6 +5256,34 @@ MonoBehaviour:
     outPlayerIndex: -1
     outActionIndex: -1
     ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 4
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 5
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
     renameDialogue: 
 --- !u!4 &1662581947
 Transform:
@@ -5343,6 +5429,7 @@ MonoBehaviour:
   - CrazyCap
   - DEMO_Condition
   - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
@@ -9216,6 +9303,7 @@ MonoBehaviour:
   - CrazyCap
   - DEMO_Condition
   - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
@@ -9226,7 +9314,7 @@ MonoBehaviour:
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 5
+  assignedIndex: 6
   assignedID: 24093
   assignedDialogue: EN_Bee
   interactionCount: 0
@@ -9237,7 +9325,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
@@ -9296,7 +9384,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: -1
-      outActionIndex: 2
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -9320,7 +9408,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: -1
-      outActionIndex: 2
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -9352,7 +9440,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 5
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -9408,7 +9496,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 8
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -9440,7 +9528,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 10
       outputNodeIndex: -1
-      outActionIndex: 2
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -9480,8 +9568,8 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: '[NONE]'
-    methodName: '[NONE]'
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
     paramType: -1
     gotoNode: -1
     param_bool: 0
@@ -9491,7 +9579,21 @@ MonoBehaviour:
     ID: 8
     outPlayerIndex: -1
     outActionIndex: -1
-    ovrStartNode: 8
+    ovrStartNode: 0
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 9
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 0
     renameDialogue: 
 --- !u!114 &8593295737896810123
 MonoBehaviour:

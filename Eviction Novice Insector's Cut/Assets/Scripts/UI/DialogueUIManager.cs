@@ -387,8 +387,6 @@ public class DialogueUIManager : MonoBehaviour
     {
         var data = VD.nodeData;
 
-        //UpdateNameMaterial(dialogue);
-
         if (VD.isActive) //Stuff we check while the dialogue is active
         {
             //Check for extra variables
@@ -408,44 +406,15 @@ public class DialogueUIManager : MonoBehaviour
                             newVars["item"] = newItem; //Set it back   
                             VD.SetExtraVariables(25, newVars); //Send newVars through UpdateExtraVariable method
                         }
-
-                        //If it's CrazyCap, check his stock before continuing
-                        //If out of stock, change override start node
-                        //if (VD.assigned.alias == "CrazyCap")
-                        //    if ((int)data.extraVars["item"] + 1 >= player.demo_Items.Count)
-                        //        VD.assigned.overrideStartNode = 28;
-
-
-                        //if (!player.demo_ItemInventory.Contains(player.demo_Items[(int)data.extraVars["item"]]))
-                        //{
-                        //    GiveItem((int)data.extraVars["item"]);
-                        //    return true;
-                        //}
                     }
                 }
             }
-            else
-            {
-                //if (data.extraVars.ContainsKey("outCondition"))
-                //{
-                //    if (data.extraVars.ContainsKey("condInfo"))
-                //    {
-                //        int[] nodeIDs = VD.ToIntArray((string)data.extraVars["outCondition"]);
-                //        if (VD.assigned.interactionCount < nodeIDs.Length)
-                //            VD.SetNode(nodeIDs[VD.assigned.interactionCount]);
-                //        else
-                //            VD.SetNode(nodeIDs[nodeIDs.Length - 1]);
-                //        return true;
-                //    }
-                //}
-            }
-            
         }
         else //Stuff we do right before the dialogue begins
         {
             if (!string.IsNullOrEmpty(Inventory.instance.currentlySelectedItem))
             {
-                storedStartNode = dialogue.overrideStartNode;
+                //storedStartNode = dialogue.overrideStartNode;
                 if (Inventory.instance.currentlySelectedItem == "Peanut Clock")
                 {
                     if (dialogue.alias == "Bee")
@@ -496,12 +465,7 @@ public class DialogueUIManager : MonoBehaviour
             }
             else
             {
-                //if (string.IsNullOrEmpty(Inventory.instance.currentlySelectedItem))
-                //{
-                //    Debug.Log("AAAAA WHY THIS");
-                //}
-                dialogue.overrideStartNode = storedStartNode;
-                //Debug.Log("BBBBBBBBBBB WHY THIS");
+                //dialogue.overrideStartNode = storedStartNode;
             }
         }
         return false;

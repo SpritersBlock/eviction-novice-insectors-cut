@@ -629,7 +629,6 @@ GameObject:
   - component: {fileID: 5269229272172800569}
   - component: {fileID: 5269229272172800568}
   - component: {fileID: 5269229272172800571}
-  - component: {fileID: 5269229272172800570}
   m_Layer: 5
   m_Name: InventoryNull
   m_TagString: Untagged
@@ -699,32 +698,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5269229272172800570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5269229272172800574}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9d13ee163017a4a87bb4218cf3bc5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySlots:
-  - {fileID: 5691780264452482044}
-  - {fileID: 3653018467225884304}
-  - {fileID: 3653018467692186869}
-  currentlySelectedItem: 
-  amountOfCurrentlySelectedItem: 0
-  inventorySelectionIndex: 0
-  inventoryActive: 0
-  selectionBorder: {fileID: 5269229270417008908}
-  itemBlurbWindow: {fileID: 5269229270907295412}
-  itemNameText: {fileID: 5269229270428840726}
-  itemDescriptionText: {fileID: 5269229270115207954}
-  inventorySlotsCanvasGroup: {fileID: 5269229272172800571}
-  itemBlurbCanvasGroup: {fileID: 5269229270907295411}
 --- !u!1001 &3850422740521360787
 PrefabInstance:
   m_ObjectHideFlags: 0
