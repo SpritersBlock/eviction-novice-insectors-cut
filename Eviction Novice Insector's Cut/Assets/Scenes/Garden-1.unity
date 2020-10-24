@@ -6779,15 +6779,19 @@ MonoBehaviour:
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
+  - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
+  - EN_Spider
   - Example3Dialogue
   - Example4_dialogue
+  - Item_Boombox
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 4
+  assignedIndex: 6
   assignedID: 24093
   assignedDialogue: EN_Bee
   interactionCount: 0
