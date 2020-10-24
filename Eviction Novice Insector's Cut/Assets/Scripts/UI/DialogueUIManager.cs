@@ -496,7 +496,12 @@ public class DialogueUIManager : MonoBehaviour
             }
             else
             {
+                //if (string.IsNullOrEmpty(Inventory.instance.currentlySelectedItem))
+                //{
+                //    Debug.Log("AAAAA WHY THIS");
+                //}
                 dialogue.overrideStartNode = storedStartNode;
+                //Debug.Log("BBBBBBBBBBB WHY THIS");
             }
         }
         return false;
