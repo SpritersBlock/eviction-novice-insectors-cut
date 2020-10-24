@@ -7,8 +7,6 @@ public class AntBaby : MonoBehaviour
     Rigidbody rb;
     bool travellingRight;
     [SerializeField] float antSpeed;
-    [SerializeField] float rayDistance = 1;
-    [SerializeField] LayerMask layerMask;
 
     private void Awake()
     {
@@ -19,7 +17,7 @@ public class AntBaby : MonoBehaviour
     void Start()
     {
         transform.localEulerAngles = new Vector3(90, 0, Random.Range(-360, 360));
-        antSpeed += Random.Range(-3, 3);
+        antSpeed += Random.Range(-4, 2);
     }
 
     // Update is called once per frame
@@ -41,10 +39,5 @@ public class AntBaby : MonoBehaviour
     void ReverseAntDirection()
     {
         travellingRight = !travellingRight;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(transform.position, transform.up * (rayDistance));
     }
 }

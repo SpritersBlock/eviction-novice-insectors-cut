@@ -2515,6 +2515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bef71e4ba25a374daed32a35993881d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inItemGetScreen: 0
   youGotObject: {fileID: 4863492882771478516}
   itemNameText: {fileID: 4863492882119070711}
   itemDescriptionText: {fileID: 4863492882157859710}
@@ -3059,6 +3060,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 752dcfecc8706124996c68ed298d25a8, type: 2}
   - {fileID: 11400000, guid: e2a53ab83a54c41449d664a5620d8630, type: 2}
   - {fileID: 11400000, guid: cc2d88f9a4e687d4b891ee3ad273abbe, type: 2}
+  - {fileID: 11400000, guid: 4776c45d6ed81214796f9d1512ede99c, type: 2}
+  - {fileID: 11400000, guid: a5ebc8f16273b9149b52a9e0a9cc0751, type: 2}
 --- !u!1 &4863492883266553757
 GameObject:
   m_ObjectHideFlags: 0
