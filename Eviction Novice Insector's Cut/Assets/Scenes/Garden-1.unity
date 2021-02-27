@@ -8421,6 +8421,7 @@ MonoBehaviour:
   - CrazyCap
   - DEMO_Condition
   - EN_Ant
+  - EN_AntBabies
   - EN_Bee
   - EN_Silkworm
   - EN_Snail
@@ -8431,7 +8432,7 @@ MonoBehaviour:
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 11
+  assignedIndex: 12
   assignedID: 53130
   assignedDialogue: Item_Boombox
   interactionCount: 0
