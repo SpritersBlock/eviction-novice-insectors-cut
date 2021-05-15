@@ -3896,6 +3896,7 @@ GameObject:
   - component: {fileID: 706769848541951824}
   - component: {fileID: 3744096596916269846}
   - component: {fileID: 1220542127908310613}
+  - component: {fileID: 6311784721614494172}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -4004,6 +4005,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 2bde148af65f9524bbedabab688be59a, type: 2}
   qualityDropdown: {fileID: 3759312608488968165}
+--- !u!114 &6311784721614494172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501666562492950111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f18df78e6cc84c808b523cf41be88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6099422578284092109
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,8 +5132,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3744096596916269846}
-        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 6311784721614494172}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
@@ -5849,8 +5862,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3744096596916269846}
-        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 6311784721614494172}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
