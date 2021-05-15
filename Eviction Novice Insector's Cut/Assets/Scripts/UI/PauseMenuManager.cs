@@ -12,6 +12,8 @@ public class PauseMenuManager : MonoBehaviour
     public bool paused;
     public static PauseMenuManager instance;
     [SerializeField] GameObject optionsPanel;
+    [SerializeField] GameObject saveConfirmPanel;
+    [SerializeField] GameObject loadConfirmPanel;
     [SerializeField] MenuManager menuManager;
 
     [Header("Buttons On Left")]
@@ -30,6 +32,10 @@ public class PauseMenuManager : MonoBehaviour
     [Header("Bugs Left")]
     [SerializeField] Slider numberOfBugsLeftSlider;
     [SerializeField] TextMeshProUGUI numberOfBugsLeftText;
+
+    [Header("Save and Load")]
+    [SerializeField] Button saveButton;
+    [SerializeField] Button loadButton;
 
     private void Awake()
     {
@@ -72,6 +78,12 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
+    public void SelectButton(Button button)
+    {
+        button.Select();
+        button.OnSelect(null);
+    }
+
     void Pause()
     {
         paused = true;
@@ -79,8 +91,7 @@ public class PauseMenuManager : MonoBehaviour
         RandomBugFact();
         UpdateNumberOfBugsLeft();
         PlayerMovement.instance.canMove = false;
-        leftButtons[0].Select();
-        leftButtons[0].OnSelect(null);
+        SelectButton(leftButtons[0]);
 
         pausePanel.transform.DOKill();
         pausePanel.transform.localPosition = new Vector3(0, 800);
@@ -105,8 +116,7 @@ public class PauseMenuManager : MonoBehaviour
     public void EnterMapSelection() //The map button is already disabled so no need to do that here
     {
         //EVENTUALLY SET AUTOMATIC BUTTON SELECTION TO AREA YOU'RE IN BUT UNTIL THEN
-        waypointButtons[0].Select();
-        waypointButtons[0].OnSelect(null);
+        SelectButton(waypointButtons[0]);
 
         for (int i = 0; i < waypointButtons.Length; i++)
         {
@@ -124,8 +134,7 @@ public class PauseMenuManager : MonoBehaviour
         }
         currentlyInMapSelection = false;
 
-        mapButton.Select();
-        mapButton.OnSelect(null);
+        SelectButton(mapButton);
     }
 
     void RandomBugFact()
