@@ -144,6 +144,28 @@ public class PauseMenuManager : MonoBehaviour
         numberOfBugsLeftText.text = NumberOfBugsLeft.instance.numberOfBugsLeft + "/" + NumberOfBugsLeft.instance.numberOfBugsTotal + "\n<size=-6>Bugs Left</size>";
     }
 
+    public void SaveGame()
+    {
+        SaveSystem.SaveGlobalProgress(GlobalProgressChecker.instance);
+    }
+
+    public void LoadGame()
+    {
+        GlobalProgData data = SaveSystem.LoadGlobalProgress();
+
+        SceneTransition.instance.CallTransitionCoroutineRandomMask(data.currentScene);
+        NumberOfBugsLeft.instance.numberOfBugsLeft = data.bugsRemaining;
+
+        for (int i = 0; i < data.garden1Progress.Length; i++)
+        {
+            GlobalProgressChecker.instance.garden1ProgressCheck[i] = data.garden1Progress[i];
+        }
+        for (int i = 0; i < data.garden2Progress.Length; i++)
+        {
+            GlobalProgressChecker.instance.garden2ProgressCheck[i] = data.garden2Progress[i];
+        }
+    }
+
     public void SetLastSelectedLeftButton(Button lastSelectedButton)
     {
         Navigation newNavi = new Navigation();

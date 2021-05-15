@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GlobalProgressChecker : MonoBehaviour
 {
     public static GlobalProgressChecker instance;
+    public int bugsRemaining; //references NumberOfBugsLeft because refactoring is hard
+    public string sceneName; //what scene the player is in
 
     public bool[] garden1ProgressCheck;
     //0,0 bee
@@ -17,6 +19,7 @@ public class GlobalProgressChecker : MonoBehaviour
     //0,6 spider
     //0,7 boombox
     //0,8 collectable boombox
+    //0,9 ant dad
 
     public bool[] garden2ProgressCheck;
     //1,0 silkworm
@@ -52,22 +55,22 @@ public class GlobalProgressChecker : MonoBehaviour
 
     public void UpdateConditionallyActiveBool(int i, int o, bool newBool)
     {
-        if (i == 0)
+        switch (i)
         {
-            garden1ProgressCheck[o] = newBool;
-        }
-        else if (i == 1)
-        {
-            garden2ProgressCheck[o] = newBool;
-        }
-        else
-        {
-            return;
+            case 0:
+                garden1ProgressCheck[o] = newBool;
+                break;
+            case 1:
+                garden2ProgressCheck[o] = newBool;
+                break;
         }
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        sceneName = scene.name;
+        bugsRemaining = NumberOfBugsLeft.instance.numberOfBugsLeft;
+
         if (scene.name == "Garden-1")
         {
             for (int i = 0; i < garden1ProgressCheck.Length; i++)
