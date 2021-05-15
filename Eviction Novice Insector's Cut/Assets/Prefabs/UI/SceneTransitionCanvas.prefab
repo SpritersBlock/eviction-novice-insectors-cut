@@ -83,6 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1874738935598736497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,7 @@ MonoBehaviour:
   mask: {fileID: 1874738936675378855}
   anim: {fileID: 1874738936070601029}
   transitionAnimClip: {fileID: 7400000, guid: d3cd5c5ae34706e4aaa27f0b4cadade9, type: 2}
+  transitioning: 0
 --- !u!1 &1874738935922703100
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +182,8 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: e7258d1bdb304da4eaf667397f3f39a0, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -323,6 +327,8 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: f914be23eeebc7c4abc1a7466aa39aa2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
