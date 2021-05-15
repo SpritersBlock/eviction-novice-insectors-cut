@@ -146,11 +146,16 @@ public class PauseMenuManager : MonoBehaviour
 
     public void SaveGame()
     {
+        //GLOBAL
         SaveSystem.SaveGlobalProgress(GlobalProgressChecker.instance);
+
+        //DIALOGUE
+        VD.SaveState("Garden", true);
     }
 
     public void LoadGame()
     {
+        //GLOBAL
         GlobalProgData data = SaveSystem.LoadGlobalProgress();
 
         SceneTransition.instance.CallTransitionCoroutineRandomMask(data.currentScene);
@@ -164,6 +169,9 @@ public class PauseMenuManager : MonoBehaviour
         {
             GlobalProgressChecker.instance.garden2ProgressCheck[i] = data.garden2Progress[i];
         }
+
+        //DIALOGUE
+        VD.LoadState("Garden", true);
     }
 
     public void SetLastSelectedLeftButton(Button lastSelectedButton)

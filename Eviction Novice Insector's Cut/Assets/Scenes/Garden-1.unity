@@ -2596,6 +2596,7 @@ GameObject:
   - component: {fileID: 1053895111}
   - component: {fileID: 1053895110}
   - component: {fileID: 1053895117}
+  - component: {fileID: 1053895118}
   m_Layer: 0
   m_Name: NPC_Spider
   m_TagString: Untagged
@@ -2695,6 +2696,7 @@ MonoBehaviour:
   - EN_Ant
   - EN_AntBabies
   - EN_Bee
+  - EN_DancingBee
   - EN_Silkworm
   - EN_Snail
   - EN_Spider
@@ -2704,7 +2706,7 @@ MonoBehaviour:
   - Item_LookUp
   - QuestChartDemo
   - TriggeredDude
-  assignedIndex: 9
+  assignedIndex: 10
   assignedID: 80459
   assignedDialogue: EN_Spider
   interactionCount: 0
@@ -3084,6 +3086,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 23b6b266483bc9841903322d14355701, type: 2}
   progressNumber: {x: 0, y: 0}
+--- !u!95 &1053895118
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053895109}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d68ebed9503b4584db6061aa596dee1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1084537304
 GameObject:
   m_ObjectHideFlags: 0
@@ -9716,6 +9737,7 @@ MonoBehaviour:
   - EN_Ant
   - EN_AntBabies
   - EN_Bee
+  - EN_DancingBee
   - EN_Silkworm
   - EN_Snail
   - EN_Spider
