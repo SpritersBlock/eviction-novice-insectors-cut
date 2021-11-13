@@ -14,4 +14,9 @@ public class GivePlayerItem : MonoBehaviour
         GlobalProgressChecker.instance.UpdateConditionallyActiveBool(Mathf.RoundToInt(progressNumber.x), Mathf.RoundToInt(progressNumber.y), false);
         Inventory.instance.AddItemToInventory(item);
     }
+
+    public void DestroyItem()
+    {
+        Destroy(gameObject);
+    }
 }
